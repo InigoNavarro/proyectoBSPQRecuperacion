@@ -5,7 +5,7 @@ Este es el proyecto que he realizado para poder recuperar la nota de la asignatu
 El proyecto sera un applicación que tiene como idea principal la gestión de una tienda de videojuegos.
 
 # Interfaz
-Habra 6 ventanas:
+Hay 6 ventanas:
 
   -Principal, que contedra 5 botones desde lo que se podran abrir el resto de ventanas.
   
@@ -21,3 +21,14 @@ Habra 6 ventanas:
   
   
 Para crear las ventanas se hara uso de javaFX.
+
+# Base de Datos
+Para la base de datos se hara uso de DataNucleos
+La base de datos consta de 3 clases:
+
+  -Juego con los atributos JuegoId, un int; NombreJ, un String; Precio, un double; Creadores, un String; numVendidos, un int y copiasDisp, un int.
+  
+  -Socio con los atributos SocioID, un int; NombreS, un String; Apellido, un String y pts, un int.
+  
+  -Reserva con los atributos id y nombre de las otras dos tablas.
+
