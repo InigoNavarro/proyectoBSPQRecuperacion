@@ -5,7 +5,10 @@ Este es el proyecto que he realizado para poder recuperar la nota de la asignatu
 El proyecto sera un applicación que tiene como idea principal la gestión de una tienda de videojuegos.
 
 # Interfaz
-Habra 5 ventanas:
+Habra 6 ventanas:
+
+  -Principal, que contedra 5 botones desde lo que se podran abrir el resto de ventanas.
+  
   -Catalogo, ver los juegos disponibles en el almacen de la tienda.
   
   -Juego, poder editar la información de un juego.
