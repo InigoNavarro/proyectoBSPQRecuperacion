@@ -4,6 +4,9 @@ Este es el proyecto que he realizado para poder recuperar la nota de la asignatu
 # Tema del proyecto
 El proyecto sera un applicación que tiene como idea principal la gestión de una tienda de videojuegos.
 
+# Comandos para instalación
+  
+
 # Interfaz
 Hay 6 ventanas:
 
