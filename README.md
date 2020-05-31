@@ -11,13 +11,13 @@ Hay 6 ventanas:
   
   -Catalogo, ver los juegos disponibles en el almacen de la tienda.
   
-  -Juego, poder editar la información de un juego.
+  -Juego, poder editar la información de un juego, recargar por falta de stock o retirarlo.
   
   -Reservas, poder ver las reservas realizadas por un cliente.
   
-  -Socio, podra verse la información de todos los clientes y seleccionando a uno se podra editar su info, ademas de crear nuevos.
+  -Socio, podra verse la información de todos los clientes y seleccionando a uno se podra editar su info, ademas de crear nuevos o elimiar antiguos.
   
-  -Un grafico de los 10 juegos que más se han vendido.
+  -Un grafico de los 10 juegos que más se han vendido, desde aqui se podran recargar aquellos con falta de stock.
   
   
 Para crear las ventanas se hara uso de javaFX.
@@ -28,7 +28,7 @@ La base de datos consta de 3 clases:
 
   -Juego, con los atributos JuegoId, un int; NombreJ, un String; Precio, un double; Creadores, un String; numVendidos, un int y copiasDisp, un int.
   
-  -Socio, con los atributos SocioID, un int; NombreS, un String; Apellido, un String y pts, un int.
+  -Socio, con los atributos SocioID, un int; NombreApellido, un String; y pts, un int.
   
   -Reserva, con los atributos id y nombre de las otras dos tablas.
 
