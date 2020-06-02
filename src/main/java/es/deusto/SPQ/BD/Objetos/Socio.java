@@ -133,6 +133,6 @@ public class Socio {
 	@Override
 	public String toString() {
 		return "El socio "+ socioId + " se llama "+ nombreApellido+ ", tiene "+ pts+ " puntos, su direccion es "+ direccion
-				+ ", su telefono es "+ telefono+ " y su edad es de "+ edad+ " años";
+				+ ", su telefono es "+ telefono+ " y su edad es  "+ edad;
 	}
 }
