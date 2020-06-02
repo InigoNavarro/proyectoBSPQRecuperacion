@@ -2,7 +2,6 @@ package es.deusto.SPQ.Interfaces.Controllers;
 
 
 import java.util.HashMap;
-
 import es.deusto.SPQ.App;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,6 +16,7 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+
 /**
  * Controller de la ventana que muestra el grafico de los 10 juegos mas vendidos
  * @author Ditto
@@ -41,7 +41,7 @@ public class controllerGrafico {
 
 	/**
 	 * Boton que carga el grafico
-	 * @param event
+	 *  @param event el click del raton
 	 */
 	@FXML
 	void cargarGrafico(ActionEvent event) {
@@ -66,7 +66,7 @@ public class controllerGrafico {
 
 	/**
 	 * Boton que recarga los juegos que ya no esten disponibles dentro del grafico
-	 * @param event
+	 *  @param event el click del raton
 	 */
 	@FXML
 	void recargarJuegos(ActionEvent event) {
@@ -76,7 +76,7 @@ public class controllerGrafico {
 
 	/**
 	 * Boton para volver a la pagina principal
-	 * @param event
+	 *  @param event el click del raton
 	 */
 	@FXML
 	void volverPagPrin(ActionEvent event) {

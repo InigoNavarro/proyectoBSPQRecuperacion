@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
 /**
  * Controller de la ventana que permite crear, editar, ver... la info de un juego
  * @author Ditto
@@ -55,7 +56,7 @@ public class controllerJuego {
 
 	/**
 	 * Boton para buscar un juego
-	 * @param event
+	 *  @param event el click del raton
 	 */
 	@FXML
 	void buscarJuego(ActionEvent event) {
@@ -74,7 +75,7 @@ public class controllerJuego {
 
 	/**
 	 * Boton para crear un juego
-	 * @param event
+	 *  @param event el click del raton
 	 */
 	@FXML
 	void crearJuego(ActionEvent event) {
@@ -92,7 +93,7 @@ public class controllerJuego {
 
 	/**
 	 * Boton para editar un juego que ya se haya buscado
-	 * @param event
+	 *  @param event el click del raton
 	 */
 	@FXML
 	void editarJuego(ActionEvent event) {
@@ -109,16 +110,28 @@ public class controllerJuego {
 		fieldVentas.setEditable(true);
 	}
 
+	/**
+	 * Boton para guardar un juego que ya se haya editado
+	 *  @param event el click del raton
+	 */
 	@FXML
 	void guardarJuego(ActionEvent event) {
 		//Update BD
 	}
 
+	/**
+	 * Boton para eliminar un juego que ya se haya buscado
+	 *  @param event el click del raton
+	 */
 	@FXML
 	void retirarJuego(ActionEvent event) {
 		//Drop BD
 	}
 
+	/**
+	 * Boton para guardar volver a la pagina principal
+	 *  @param event el click del raton
+	 */
 	@FXML
 	void volverPaginaPrinc(ActionEvent event) {
 		try {

@@ -2,6 +2,11 @@ package es.deusto.SPQ.BD.Objetos;
 
 import javax.jdo.annotations.*;
 
+/**
+ * La clase Juego de la BD
+ * @author Ditto
+ *
+ */
 @PersistenceCapable
 public class Juego{
 

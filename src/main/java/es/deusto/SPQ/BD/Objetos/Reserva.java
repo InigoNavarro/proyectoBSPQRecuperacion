@@ -1,6 +1,11 @@
 package es.deusto.SPQ.BD.Objetos;
 import javax.jdo.annotations.*;
 
+/**
+ * El clase reserva de la BD
+ * @author Ditto
+ *
+ */
 @PersistenceCapable
 public class Reserva {
 	@PrimaryKey
@@ -113,8 +118,8 @@ public class Reserva {
 	/**
 	 * To string de la clase reserva
 	 */
-  @Override
-  public String toString() {
-    return "La reserva "+ reservaId+ " es del juego "+ juegoNombre+ " y la ha realizado el socio " + socioNombreApellido;
-  }
+	@Override
+	public String toString() {
+		return "La reserva "+ reservaId+ " es del juego "+ juegoNombre+ " y la ha realizado el socio " + socioNombreApellido;
+	}
 }

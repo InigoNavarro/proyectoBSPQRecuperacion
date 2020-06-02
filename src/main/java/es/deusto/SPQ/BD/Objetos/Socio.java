@@ -2,6 +2,11 @@ package es.deusto.SPQ.BD.Objetos;
 
 import javax.jdo.annotations.*;
 
+/**
+ * La clase socio de la BD
+ * @author Ditto
+ *
+ */
 @PersistenceCapable
 public class Socio {
 	@PrimaryKey
