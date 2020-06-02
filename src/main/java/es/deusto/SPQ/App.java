@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * El ejecutor de la ventana principal
+ * Clase que actua como main
  * @author Ditto
  *
  */
