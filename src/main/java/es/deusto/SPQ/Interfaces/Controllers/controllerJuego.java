@@ -10,7 +10,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
+/**
+ * Controller de la ventana que permite crear, editar, ver... la info de un juego
+ * @author Ditto
+ *
+ */
 public class controllerJuego {
 
 	@FXML

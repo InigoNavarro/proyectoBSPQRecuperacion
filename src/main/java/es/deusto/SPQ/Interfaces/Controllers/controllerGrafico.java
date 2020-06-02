@@ -17,7 +17,11 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
+/**
+ * Controller de la ventana que muestra el grafico de los 10 juegos mas vendidos
+ * @author Ditto
+ *
+ */
 public class controllerGrafico {
 	static ObservableList<String> juegos;
 	HashMap<String, Integer> grafico = new HashMap<String, Integer>();

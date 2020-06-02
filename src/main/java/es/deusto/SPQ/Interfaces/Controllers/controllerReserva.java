@@ -17,7 +17,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
-
+/**
+ * Controller de la ventana que permite gestionar las reservas
+ * @author Ditto
+ *
+ */
 public class controllerReserva {
 
 	public static ObservableList<String> reservas = FXCollections.observableArrayList();

@@ -9,7 +9,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * Hello world!
+ * Clase que actua como main
+ * @author Ditto
  *
  */
 public class App extends Application {
