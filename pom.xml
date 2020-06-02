@@ -12,6 +12,7 @@
 		<maven.compiler.target>13</maven.compiler.target>
 		<openjfx.Version>14</openjfx.Version>
 		<openjfx.Maven.Version>0.0.4</openjfx.Maven.Version>
+		<default-properties-file>${basedir}/src/main/resources/default.properties</default-properties-file>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -29,6 +30,16 @@
 			<artifactId>javafx-controls</artifactId>
 			<version>${openjfx.Version}</version>
 		</dependency>
+		 <dependency>
+            <groupId>org.controlsfx</groupId>
+            <artifactId>controlsfx</artifactId>
+            <version>11.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${openjfx.Version}</version>
+        </dependency>
 		<dependency>
 			<groupId>org.datanucleus</groupId>
 			<artifactId>datanucleus-api-jdo</artifactId>
@@ -147,7 +158,7 @@
 				<artifactId>javafx-maven-plugin</artifactId>
 				<version>${openjfx.Maven.Version}</version>
 				<configuration>
-					<mainClass>es.deusto.App</mainClass>
+					<mainClass>es.deusto.SQP.App</mainClass>
 				</configuration>
 			</plugin>
 			<plugin>
