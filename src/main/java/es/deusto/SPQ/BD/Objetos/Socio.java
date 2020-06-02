@@ -52,7 +52,7 @@ public class Socio {
 
 	/**
 	 * Cambiar el id de un socio
-	 * @param el id al que se quiere cambiar
+	 * @param socioId el id al que se quiere cambiar
 	 */
 	public void setSocioId(String socioId) {
 		this.socioId = socioId;}
@@ -66,7 +66,7 @@ public class Socio {
 
 	/**
 	 * Cambiar el nombre y apellido de un socio
-	 * @param el nombre y apellido al que se quiere cambiar
+	 * @param nombreApellido el nombre y apellido al que se quiere cambiar
 	 */
 	public void setNombreApellido(String nombreApellido) {
 		this.nombreApellido = nombreApellido;}
@@ -80,7 +80,7 @@ public class Socio {
 
 	/**
 	 * Cambiar los puntos de un socio
-	 * @param los puntos a los que se quiere cambiar
+	 * @param pts los puntos a los que se quiere cambiar
 	 */
 	public void setPts(int pts) {
 		this.pts = pts;}
@@ -94,7 +94,7 @@ public class Socio {
 
 	/**
 	 * Cambiar la direccion de un socio
-	 * @param la direccion a la que se quiere cambiar
+	 * @param direccion la direccion a la que se quiere cambiar
 	 */
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;}
@@ -108,7 +108,7 @@ public class Socio {
 
 	/**
 	 * Cambiar el telefono de un socio
-	 * @param el telefono al que se quiere cambiar
+	 * @param telefono el telefono al que se quiere cambiar
 	 */
 	public void setTelefono(int telefono) {
 		this.telefono = telefono;}
@@ -122,7 +122,7 @@ public class Socio {
 
 	/**
 	 * Cambiar la edad de un socio
-	 * @param la edad a la que se quiere cambiar
+	 * @param edad la edad a la que se quiere cambiar
 	 */
 	public void setEdad(int edad) {
 		this.edad = edad;}
