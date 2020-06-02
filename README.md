@@ -29,9 +29,9 @@ Para crear las ventanas se hara uso de javaFX.
 Para la base de datos se hara uso de DataNucleos
 La base de datos consta de 3 clases:
 
-  -Juego, con los atributos JuegoId, un int; NombreJ, un String; Precio, un double; Creadores, un String; numVendidos, un int y copiasDisp, un int.
+  -Juego, con los atributos JuegoId, un String; NombreJ, un String; Precio, un double; Creadores, un String; numVendidos, un int y copiasDisp, un int.
   
-  -Socio, con los atributos SocioID, un int; NombreApellido, un String; y pts, un int.
+  -Socio, con los atributos SocioID, un String; NombreApellido, un String; y pts, un int.
   
   -Reserva, con los atributos id y nombre de las otras dos tablas.
 
