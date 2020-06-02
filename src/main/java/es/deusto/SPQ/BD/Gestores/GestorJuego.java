@@ -162,4 +162,12 @@ public class GestorJuego {
 	            pm.close();
 	        }
 	    }
+	 /**
+	  * Metodo para guardar un juego
+	  * @param juego el juego que se quiere guardar
+	  */
+	 public static void storeJuego(Juego juego) {
+	        GestorBD.getInstance();
+	        GestorBD.getInstance().storeObjectInDB(juego);
+	    }
 }

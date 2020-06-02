@@ -37,7 +37,6 @@ public class GestorBD {
 		if (object == null) {
 			throw new NullPointerException("Objecto para guardar es null");
 		}
-
 		Transaction transaction = null;
 		try {
 			pm = getPMF().getPersistenceManager();

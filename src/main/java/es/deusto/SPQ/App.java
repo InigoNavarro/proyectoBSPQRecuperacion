@@ -1,6 +1,5 @@
 package es.deusto.SPQ;
 
-import java.awt.Toolkit;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,13 +8,19 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * Hello world!
+ * Clase que actua como main
+ * @author Ditto
  *
  */
 public class App extends Application {
 
     private static Scene scene;
 
+    public App() {
+    	CrearDatosBD cdBD = new CrearDatosBD();
+    	cdBD.cargarBase();
+    }
+    
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader loader = getFXMLLoader("paginaPrin");
