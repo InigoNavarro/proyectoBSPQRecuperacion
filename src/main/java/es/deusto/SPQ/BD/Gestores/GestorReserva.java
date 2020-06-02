@@ -16,7 +16,7 @@ public class GestorReserva {
 
 	/**
 	 * Se obtienen todos los objetos Reserva
-	 * @return
+	 * @return la lista de reservas
 	 */
 	public static List<Reserva> getTodasReservas() {
 		return GestorBD.getInstance().selectListaObjectos(Reserva.class);
@@ -26,7 +26,7 @@ public class GestorReserva {
 	 * Seleccionar una reserva basandose en el juego reservado y el socio que lo ha reservado
 	 * @param juegoNombre el nombre del juego reservado
 	 * @param socioNombreApellido el nombre y apellido del socio que ha hecho la reserva
-	 * @return
+	 * @return la reserva que se ha encontrado
 	 */
 	public static Reserva selectJuego(String juegoNombre, String socioNombreApellido) {
 		PersistenceManager pm = GestorBD.getPMF().getPersistenceManager();

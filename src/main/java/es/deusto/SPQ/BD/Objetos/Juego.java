@@ -29,7 +29,7 @@ public class Juego{
 
 	/**
 	 * Cambiar el id de un juego
-	 * @param el id al que se quiere cambiar
+	 * @param id el id al que se quiere cambiar
 	 */
 	public void setId(String id) {
 		this.juegoId = id;}
@@ -42,8 +42,8 @@ public class Juego{
 		return nombreJuego;}
 
 	/**
-	 * Cambiar el nombre de un juego
-	 * @param el nombre al que se quiere cambiar
+	 * Cambiar el nombre del juego
+	 * @param nombreJuego el nombre al que se quiere cambiar
 	 */
 	public void setNombreJuego(String nombreJuego) {
 		this.nombreJuego = nombreJuego;}
@@ -57,7 +57,7 @@ public class Juego{
 
 	/**
 	 * Cambiar el precio de un juego
-	 * @param el precio al que se quiere cambiar
+	 * @param precio el precio al que se quiere cambiar
 	 */
 	public void setPrecio(float precio) {
 		this.precio = precio;}
@@ -71,7 +71,7 @@ public class Juego{
 
 	/**
 	 * Cambiar la empresa creadora de un juego
-	 * @param la empresa al que se quiere cambiar
+	 * @param empresa la empresa al que se quiere cambiar
 	 */
 	public void setEmpresa(String empresa) {
 		this.empresa = empresa;}
@@ -85,7 +85,7 @@ public class Juego{
 
 	/**
 	 * Cambiar el numero de ventas de un juego
-	 * @param el numero de ventas al que se quiere cambiar
+	 * @param numVendidos el numero de ventas al que se quiere cambiar
 	 */
 	public void setNumVendidos(int numVendidos) {
 		this.numVendidos = numVendidos;}
@@ -99,7 +99,7 @@ public class Juego{
 
 	/**
 	 * Cambiar la disponibilidad de un juego
-	 * @param la disponibilidad a la que se quiere cambiar
+	 * @param copiasDisp la disponibilidad a la que se quiere cambiar
 	 */
 	public void setCopiasDisp(boolean copiasDisp) {
 		this.copiasDisp = copiasDisp;}

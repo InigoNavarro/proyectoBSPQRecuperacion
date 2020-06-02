@@ -15,7 +15,7 @@ public class GestorJuego {
 	
 	/**
 	 * Obtener todos los juegos
-	 * @return
+	 * @return la lista de los juegos
 	 */
 	public static List<Juego> getTodosCircuitos() {
         return GestorBD.getInstance().selectListaObjectos(Juego.class);
@@ -24,7 +24,7 @@ public class GestorJuego {
 	/**
 	 * Solo obtener un juego en vez de todos
 	 * @param nomJuego el nombre del juego que se quiere obtener
-	 * @return
+	 * @return el juego que se ha encontrado
 	 */
 	 public static Juego selectJuego(String nomJuego) {
 	        PersistenceManager pm = GestorBD.getPMF().getPersistenceManager();

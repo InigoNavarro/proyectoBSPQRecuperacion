@@ -16,7 +16,7 @@ import es.deusto.SPQ.BD.Objetos.Socio;
 public class GestorSocio {
 	/**
 	 * Obtener todos los Socios
-	 * @return
+	 * @return la lista de los socios
 	 */
 	public static List<Socio> getTodosSocios() {
         return GestorBD.getInstance().selectListaObjectos(Socio.class);
