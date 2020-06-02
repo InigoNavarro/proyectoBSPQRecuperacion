@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.deusto.SPQ.Interfaces.Controllers.controllerPagPrincipal">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.deusto.SPQ.Interfaces.Controllers.controllerReserva">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -51,11 +55,16 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Button fx:id="botonCatalogo" layoutX="85.0" layoutY="77.0" mnemonicParsing="false" onAction="#irVentanaCatalogo" text="Catalogo" />
-            <Button fx:id="botonGrafico" layoutX="85.0" layoutY="255.0" mnemonicParsing="false" onAction="#irVentanaGrafico" text="Grafico" />
-            <Button fx:id="botonReservas" layoutX="427.0" layoutY="77.0" mnemonicParsing="false" onAction="#irVentanareservas" text="Reservas" />
-            <Button fx:id="botonCliente" layoutX="427.0" layoutY="255.0" mnemonicParsing="false" onAction="#irVentanaCliente" text="Cliente" />
-            <Button fx:id="botonJuegos" layoutX="268.0" layoutY="164.0" mnemonicParsing="false" onAction="#irVentanaJuegos" text="Juegos" />
+        <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="Drag components from Library here…" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+          <font>
+            <Font size="18.0" />
+          </font>
+        </Label>
+            <TextField fx:id="textoReserva" layoutX="26.0" layoutY="14.0" prefHeight="25.0" prefWidth="509.0" promptText="Insertar el nombre del juego o socio que se quiere buscar" />
+            <Button fx:id="botonReserva" layoutX="546.0" layoutY="14.0" mnemonicParsing="false" onAction="#buscarReserva" text="Buscar Reserva" />
+            <Button fx:id="botonBorrar" layoutX="320.0" layoutY="335.0" mnemonicParsing="false" onAction="#borrarHist" prefHeight="27.0" prefWidth="219.0" text="Borrar historial busquedas recientes" />
+            <Button fx:id="botonVolver" layoutX="575.0" layoutY="336.0" mnemonicParsing="false" onAction="#volverPagPrin" text="Voler" />
+            <ListView fx:id="listaReservas" layoutX="26.0" layoutY="52.0" prefHeight="266.0" prefWidth="509.0" />
       </children>
     </AnchorPane>
   </children>
