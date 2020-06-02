@@ -56,6 +56,7 @@ public class controllerCatalogo {
 	/**
 	 * Boton de busqueda de un juego
 	 * @param event 
+	 * @author Ditto
 	 */
 	@FXML
 	void buscarJuego(ActionEvent event) {
