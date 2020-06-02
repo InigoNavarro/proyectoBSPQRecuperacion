@@ -124,7 +124,7 @@ public class GestorSocio {
 		    }
 	 
 	 /**
-	  * Con el store no haria falta este metodo pero sirve para añadir un socio a la bd
+	  * Con el store no haria falta este metodo pero sirve para meter un nuevo socio a la bd
 	  * @param nombreApellidoNuevo Nombre y Apellido del nuevo socio
 	  * @param puntosNuevo los puntos que tiene (siempre sera 0)
 	  * @param direccionNueva la direccion del nuevo socio
