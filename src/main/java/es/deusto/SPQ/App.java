@@ -9,7 +9,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * Hello world!
+ * El ejecutor de la ventana principal
+ * @author Ditto
  *
  */
 public class App extends Application {

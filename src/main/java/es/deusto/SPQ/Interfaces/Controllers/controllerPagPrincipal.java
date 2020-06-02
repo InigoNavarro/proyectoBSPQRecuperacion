@@ -9,7 +9,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
+/**
+ * Controller de la ventana principal
+ * @author Ditto
+ *
+ */
 public class controllerPagPrincipal {
 
     @FXML

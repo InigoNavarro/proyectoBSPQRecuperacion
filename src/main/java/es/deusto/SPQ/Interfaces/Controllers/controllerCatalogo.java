@@ -19,7 +19,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
-
+/**
+ * Controller de la ventana que muestra los juegos que estan en el catalogo
+ * @author Ditto
+ *
+ */
 public class controllerCatalogo {
 	
 	public static ObservableList<String> juegos = FXCollections.observableArrayList();
