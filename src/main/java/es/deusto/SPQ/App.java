@@ -19,7 +19,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader loader = getFXMLLoader("paginaPrin");
-        scene = new Scene(loader.load(),Toolkit.getDefaultToolkit().getScreenSize().width,Toolkit.getDefaultToolkit().getScreenSize().height);
+        scene = new Scene(loader.load(),650, 450);
         stage.setScene(scene);
         stage.show();
     }
