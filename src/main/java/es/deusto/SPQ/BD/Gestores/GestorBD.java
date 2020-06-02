@@ -1,73 +1,85 @@
 package es.deusto.SPQ.BD.Gestores;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Handler;
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
+import java.util.List;
+import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
-
-import es.deusto.bd.Gestor.GestorBD;
-import es.deusto.util.LogTracker;
-
+import javax.jdo.Query;
+import javax.jdo.Transaction;
 
 public class GestorBD {
-	private static boolean DEBUG = false;
-    private static GestorBD instance = null;
-    private static PersistenceManagerFactory pmf = null;
-    private static PersistenceManager pm = null;
-    private static Logger logger = null;
-    
-    public GestorBD() {
+	private static PersistenceManagerFactory pmf = null;
+	private static PersistenceManager pm = null;
+	private static GestorBD instance = null;
 
-        logger = Logger.getLogger(GestorBD.class.getName());
-        logger.setUseParentHandlers(false);
-        // Para los errors SEVERE
-        logger.addHandler(
-                new Handler() {
+	public static GestorBD getInstance() {
+		if (instance == null) {
+			instance = new GestorBD();
+			instance.conectar();
+		}
+		return instance;
+	}
 
-                    @Override
-                    public void publish(LogRecord record) {
-                        if (record.getLevel() == Level.SEVERE) {
-                            String exception = "";
-                            if (record.getThrown() != null) {
-                                StringWriter writer = new StringWriter();
-                                PrintWriter printWriter = new PrintWriter(writer);
-                                record.getThrown().printStackTrace(printWriter);
-                                exception = writer.toString();
-                            }
-                            LogTracker.addMessage(record.getMessage() + exception);
-                        }
-                        flush();
-                    }
+	protected static PersistenceManagerFactory getPMF() {
+		getInstance();
+		return pmf;
+	}
 
-                    @Override
-                    public void flush() {}
+	private void conectar() {
+		pmf = JDOHelper.getPersistenceManagerFactory("CentralUnit");
+	}
 
-                    @Override
-                    public void close() throws SecurityException {}
-                });
-        // desactivar los mensajes si no estamos en debug
-        logger.addHandler(
-                new ConsoleHandler() {
-                    @Override
-                    public void publish(LogRecord record) {
-                        if (DEBUG) {
-                            super.publish(record);
-                        }
-                        flush();
-                    }
-                });
-    }
+	public <T> void store(Class<T> object) {
+		GestorBD.getInstance().storeObjectInDB(object);
+	}
 
-    public static GestorBD getInstance() {
-        if (instance == null) {
-            instance = new GestorBD();
-            instance.conectar();
-        }
-        return instance;
-    }
+	public boolean storeObjectInDB(Object object) {
+		if (object == null) {
+			throw new NullPointerException("Objecto para guardar es null");
+		}
+
+		Transaction transaction = null;
+		try {
+			pm = getPMF().getPersistenceManager();
+			transaction = pm.currentTransaction();
+			transaction.begin();
+			pm.setIgnoreCache(true);
+			pm.makePersistent(object);
+			transaction.commit();
+		} catch (Exception e) {
+			System.out.println("Error" + e.getMessage());
+			return false;
+		} finally {
+			if (transaction.isActive()) {
+				transaction.rollback();
+			}
+			pm.close();
+		}
+		return true;
+	}
+
+	public <T> List<T> selectListaObjectos(Class<T> objectoClass) {
+		List<T> resultados;
+		PersistenceManager pm = getPMF().getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		try {
+			tx.begin();
+			Query<T> q = pm.newQuery(objectoClass);
+			q.ignoreCache(true);
+			List<T> res = q.executeList();
+			tx.commit();
+			resultados = res;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+			pm.close();
+		}
+
+		return resultados;
+	}
+
 }
