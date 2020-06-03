@@ -9,17 +9,21 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * Hello world!
+ * Clase que actua como main
+ * @author Ditto
  *
  */
 public class App extends Application {
 
     private static Scene scene;
 
+    public App() {
+    }
+    
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader loader = getFXMLLoader("paginaPrin");
-        scene = new Scene(loader.load(),Toolkit.getDefaultToolkit().getScreenSize().width,Toolkit.getDefaultToolkit().getScreenSize().height);
+        scene = new Scene(loader.load(),650, 450);
         stage.setScene(scene);
         stage.show();
     }
