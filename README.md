@@ -1,4 +1,5 @@
 # Proyecto BSPQ Recuperacion
+[![Build Status](https://travis-ci.com/InigoNavarro/proyectoBSPQRecuperacion.svg?branch=master)](https://travis-ci.com/InigoNavarro/proyectoBSPQRecuperacion)  [![Coverage Status](https://coveralls.io/repos/github/InigoNavarro/proyectoBSPQRecuperacion/badge.svg?branch=master)]
 Este es el proyecto que he realizado para poder recuperar la nota de la asignatura Procesos del Software y Calidad de la Universidad de Deusto
 
 # Tema del proyecto
