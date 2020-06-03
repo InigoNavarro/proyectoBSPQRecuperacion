@@ -27,7 +27,3 @@ cache:
 # The 'language: java' directive sets up sane defaults to test common java applications
 # We use the defaults for installing dependencies, compiling and testing maven applications
 # In our case it will be 'mvn install' followed by 'mvn test'
-
-# If a build is successful, the code is submitted for coverage analysis
-after_success:
-- bash ./javadoc.sh

@@ -32,6 +32,9 @@ public class controllerReserva {
 
 	@FXML
 	private Button botonReserva;
+	
+	@FXML
+    private TextField textNomApellidoSocio;
 
 	@FXML
 	private Button botonBorrar;
