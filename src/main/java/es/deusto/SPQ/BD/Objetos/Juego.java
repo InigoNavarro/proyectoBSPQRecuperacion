@@ -134,6 +134,13 @@ public class Juego{
 	public Juego() {
 		super();
 	}
+	
+	/**
+	 * Metodo que aumenta en uno los numeros vendidos
+	 */
+	public void comprar() {
+		this.numVendidos += 1;
+	}
 
 	/**
 	 * To string de la clase juegos.

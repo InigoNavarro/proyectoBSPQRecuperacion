@@ -1,6 +1,5 @@
 package es.deusto.SPQ;
 
-import es.deusto.SPQ.BD.Gestores.GestorBD;
 import es.deusto.SPQ.BD.Gestores.GestorJuego;
 import es.deusto.SPQ.BD.Objetos.Juego;
 import es.deusto.SPQ.BD.Objetos.Reserva;
