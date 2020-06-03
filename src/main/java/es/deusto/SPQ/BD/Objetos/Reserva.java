@@ -1,9 +1,15 @@
 package es.deusto.SPQ.BD.Objetos;
 import javax.jdo.annotations.*;
 
+/**
+ * El clase reserva de la BD
+ * @author Ditto
+ *
+ */
 @PersistenceCapable
 public class Reserva {
 	@PrimaryKey
+	@Persistent
 	@Column(name = "reserva_ID")
 	private String reservaId;
 
@@ -49,7 +55,7 @@ public class Reserva {
 
 	/**
 	 * Cambiar el id de una reserva
-	 * @param el id al que se quiere cambiar
+	 * @param reservaId el id al que se quiere cambiar
 	 */
 	public void setReservaId(String reservaId) {
 		this.reservaId = reservaId;}
@@ -63,7 +69,7 @@ public class Reserva {
 
 	/**
 	 * Cambiar el id de u juego reservado
-	 * @param el id al que se quiere cambiar
+	 * @param juegoID el id al que se quiere cambiar
 	 */
 	public void setJuegoID(String juegoID) {
 		this.juegoID = juegoID;}
@@ -77,7 +83,7 @@ public class Reserva {
 
 	/**
 	 * Cambiar el id del socio que a reservado
-	 * @param el id al que se quiere cambiar
+	 * @param socioID el id al que se quiere cambiar
 	 */
 	public void setSocioID(String socioID) {
 		this.socioID = socioID;}
@@ -91,7 +97,7 @@ public class Reserva {
 
 	/**
 	 * Cambiar el nombre del juego que se a reservado
-	 * @param el nombre al que se quiere cambiar
+	 * @param juegoNombre el nombre al que se quiere cambiar
 	 */
 	public void setJuegoNombre(String juegoNombre) {
 		this.juegoNombre = juegoNombre;}
@@ -105,7 +111,7 @@ public class Reserva {
 
 	/**
 	 * Cambiar el nombre del socio que a reservado
-	 * @param el nombre al que se quiere cambiar
+	 * @param socioNombreApellido el nombre al que se quiere cambiar
 	 */
 	public void setSocioNombreApellido(String socioNombreApellido) {
 		this.socioNombreApellido = socioNombreApellido;}
@@ -113,8 +119,8 @@ public class Reserva {
 	/**
 	 * To string de la clase reserva
 	 */
-  @Override
-  public String toString() {
-    return "La reserva "+ reservaId+ " es del juego "+ juegoNombre+ " y la ha realizado el socio " + socioNombreApellido;
-  }
+	@Override
+	public String toString() {
+		return "La reserva "+ reservaId+ " es del juego "+ juegoNombre+ " y la ha realizado el socio " + socioNombreApellido;
+	}
 }

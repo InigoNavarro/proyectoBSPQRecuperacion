@@ -60,11 +60,12 @@
             <Font size="18.0" />
           </font>
         </Label>
-            <TextField fx:id="textoReserva" layoutX="26.0" layoutY="14.0" prefHeight="25.0" prefWidth="509.0" promptText="Insertar el nombre del juego o socio que se quiere buscar" />
+            <TextField fx:id="textoReserva" layoutX="26.0" layoutY="14.0" prefHeight="25.0" prefWidth="257.0" promptText="Nombre del juego a buscar" />
             <Button fx:id="botonReserva" layoutX="546.0" layoutY="14.0" mnemonicParsing="false" onAction="#buscarReserva" text="Buscar Reserva" />
             <Button fx:id="botonBorrar" layoutX="320.0" layoutY="335.0" mnemonicParsing="false" onAction="#borrarHist" prefHeight="27.0" prefWidth="219.0" text="Borrar historial busquedas recientes" />
             <Button fx:id="botonVolver" layoutX="575.0" layoutY="336.0" mnemonicParsing="false" onAction="#volverPagPrin" text="Voler" />
             <ListView fx:id="listaReservas" layoutX="26.0" layoutY="52.0" prefHeight="266.0" prefWidth="509.0" />
+            <TextField fx:id="textNomApellidoSocio" layoutX="292.0" layoutY="14.0" prefHeight="25.0" prefWidth="241.0" promptText="Nombre y apellido del socio a buscar" />
       </children>
     </AnchorPane>
   </children>

@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
 /**
  * Controller de la ventana que permite ver, editar, crear... un socio
  * @author Ditto
@@ -55,7 +56,7 @@ public class controllerSocio {
 
 	/**
 	 * Boton para buscar a un socio
-	 * @param event
+	 *@param event el click del raton
 	 */
 	@FXML
 	void buscarSocio(ActionEvent event) {
@@ -73,7 +74,7 @@ public class controllerSocio {
 
 	/**
 	 * Boton para crear a un socio
-	 * @param event
+	 * @param event el click del raton
 	 */
 	@FXML
 	void crearSocio(ActionEvent event) {
@@ -91,7 +92,7 @@ public class controllerSocio {
 
 	/**
 	 * Boton para editar a un socio que ya se haya buscado
-	 * @param event
+	 * @param event el click del raton
 	 */
 	@FXML
 	void editarSocio(ActionEvent event) {
@@ -109,7 +110,7 @@ public class controllerSocio {
 
 	/**
 	 * Boton para guardar un socio
-	 * @param event
+	 * @param event el click del raton
 	 */
 	@FXML
 	void guardarSocio(ActionEvent event) {
@@ -118,7 +119,7 @@ public class controllerSocio {
 
 	/**
 	 * Boton para retirar un socio
-	 * @param event
+	 * @param event el click del raton
 	 */
 	@FXML
 	void retirarSocio(ActionEvent event) {
@@ -127,7 +128,7 @@ public class controllerSocio {
 
 	/**
 	 * Boton para volver a la pagina principal
-	 * @param event
+	 * @param event el click del raton
 	 */
 	@FXML
 	void volverPaginaPrinc(ActionEvent event) {

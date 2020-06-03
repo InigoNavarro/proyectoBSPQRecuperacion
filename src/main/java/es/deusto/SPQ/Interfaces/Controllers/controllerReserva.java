@@ -17,6 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
+
 /**
  * Controller de la ventana que permite gestionar las reservas
  * @author Ditto
@@ -25,25 +26,28 @@ import javafx.stage.Stage;
 public class controllerReserva {
 
 	public static ObservableList<String> reservas = FXCollections.observableArrayList();
+
+	@FXML
+	private TextField textoReserva;
+
+	@FXML
+	private Button botonReserva;
 	
-    @FXML
-    private TextField textoReserva;
+	@FXML
+    private TextField textNomApellidoSocio;
 
-    @FXML
-    private Button botonReserva;
+	@FXML
+	private Button botonBorrar;
 
-    @FXML
-    private Button botonBorrar;
+	@FXML
+	private Button botonVolver;
 
-    @FXML
-    private Button botonVolver;
+	@FXML
+	private ListView<String> listaReservas;
 
-    @FXML
-    private ListView<String> listaReservas;
-
-    /**
+	/**
 	 * Boton que borra el historial
-	 * @param event
+	 * @param event el click del raton
 	 */
 	@FXML
 	void borrarHist(ActionEvent event) {
@@ -53,7 +57,7 @@ public class controllerReserva {
 
 	/**
 	 * Boton de busqueda de un juego
-	 * @param event 
+	 * @param event el click del raton
 	 */
 	@FXML
 	void buscarReserva(ActionEvent event) {
@@ -68,7 +72,7 @@ public class controllerReserva {
 
 	/**
 	 * Boton de volver a la pagina anterior
-	 * @param event
+	 * @param event el click del raton
 	 */
 	@FXML
 	void volverPagPrin(ActionEvent event) {

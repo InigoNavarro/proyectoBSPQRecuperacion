@@ -1,6 +1,5 @@
 package es.deusto.SPQ;
 
-import java.awt.Toolkit;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

@@ -1,7 +1,5 @@
 package es.deusto.SPQ.Interfaces.Controllers;
 
-import java.io.IOException;
-
 import es.deusto.SPQ.App;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,13 +17,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
+
 /**
  * Controller de la ventana que muestra los juegos que estan en el catalogo
  * @author Ditto
  *
  */
 public class controllerCatalogo {
-	
+
 	public static ObservableList<String> juegos = FXCollections.observableArrayList();
 
 	@FXML
@@ -45,7 +44,7 @@ public class controllerCatalogo {
 
 	/**
 	 * Boton que borra el historial
-	 * @param event
+	 * @param event el click del raton
 	 */
 	@FXML
 	void borrarHist(ActionEvent event) {
@@ -55,8 +54,7 @@ public class controllerCatalogo {
 
 	/**
 	 * Boton de busqueda de un juego
-	 * @param event 
-	 * @author Ditto
+	 * @param event el click del raton
 	 */
 	@FXML
 	void buscarJuego(ActionEvent event) {
@@ -71,7 +69,7 @@ public class controllerCatalogo {
 
 	/**
 	 * Boton de volver a la pagina anterior
-	 * @param event
+	 * @param event el click del raton
 	 */
 	@FXML
 	void volverPagPrin(ActionEvent event) {
