@@ -17,8 +17,6 @@ public class App extends Application {
     private static Scene scene;
 
     public App() {
-    	CrearDatosBD cdBD = new CrearDatosBD();
-    	cdBD.cargarBase();
     }
     
     @Override
