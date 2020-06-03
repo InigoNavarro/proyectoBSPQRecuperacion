@@ -23,14 +23,10 @@ class ReservaTest {
 	@Test
 	void reservaTest() {
 		
-		extracted();
+		Mockito.when(r.getJuegoNombre()).thenReturn("Transistor");
 		Mockito.when(r.getSocioNombreApellido()).thenReturn("Inigo Navarro");
 
 		assertEquals("Transistor", r.getJuegoNombre());
 		assertEquals("Inigo Navarro", r.getSocioNombreApellido());
 	}
-
-  private void extracted() {
-    Mockito.when(r.getJuegoNombre()).thenReturn("Transistor");
-  }
 }
