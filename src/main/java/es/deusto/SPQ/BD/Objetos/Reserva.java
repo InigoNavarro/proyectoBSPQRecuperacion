@@ -9,6 +9,7 @@ import javax.jdo.annotations.*;
 @PersistenceCapable
 public class Reserva {
 	@PrimaryKey
+	@Persistent
 	@Column(name = "reserva_ID")
 	private String reservaId;
 

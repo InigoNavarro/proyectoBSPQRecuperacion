@@ -10,6 +10,7 @@ import javax.jdo.annotations.*;
 @PersistenceCapable
 public class Socio {
 	@PrimaryKey
+	@Persistent
 	@Column(name = "socio_ID")
 	private String socioId;
 

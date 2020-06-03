@@ -11,6 +11,7 @@ import javax.jdo.annotations.*;
 public class Juego{
 
 	@PrimaryKey
+	@Persistent
 	@Column(name = "juego_ID")
 	private String juegoId;
 

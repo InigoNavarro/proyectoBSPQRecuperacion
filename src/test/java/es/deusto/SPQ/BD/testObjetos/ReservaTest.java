@@ -18,16 +18,19 @@ class ReservaTest {
 	Reserva r;
 
 	@Before
-	public void setUp() {
-
-	}
+	public void setUp() {}
 
 	@Test
 	void reservaTest() {
-		Mockito.when(r.getJuegoNombre()).thenReturn("Transistor");
+		
+		extracted();
 		Mockito.when(r.getSocioNombreApellido()).thenReturn("Inigo Navarro");
 
 		assertEquals("Transistor", r.getJuegoNombre());
 		assertEquals("Inigo Navarro", r.getSocioNombreApellido());
 	}
+
+  private void extracted() {
+    Mockito.when(r.getJuegoNombre()).thenReturn("Transistor");
+  }
 }
