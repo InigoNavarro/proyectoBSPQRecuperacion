@@ -1,6 +1,7 @@
 package es.deusto.SPQ.BD.testObjetos;
 
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -19,10 +20,14 @@ class SocioTest {
 	@Mock
 	Socio s;
 	
+	@Before
+	public void setUp() {
+		
+	}
+	
 	@Test
 	void socioTest() {
 		
-		Mockito.
 		Mockito.when(s.getNombreApellido()).thenReturn("Inigo Navarro");
 		Mockito.when(s.getPts()).thenReturn(500);
 		Mockito.when(s.getDireccion()).thenReturn("123445");
