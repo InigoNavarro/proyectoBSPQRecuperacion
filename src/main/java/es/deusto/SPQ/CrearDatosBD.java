@@ -60,4 +60,16 @@ public class CrearDatosBD {
 	public void cargarBase() {
 		GestorJuego.storeJuego(J1);
 	}
+	
+	public Juego obtenerJuego() {
+		return J1;
+	}
+	
+	public Socio obtenerSocio() {
+		return S1;
+	}
+	
+	public Reserva obtenerReserva() {
+		return R1;
+	}
 }
