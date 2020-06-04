@@ -176,7 +176,7 @@
 				<artifactId>datanucleus-maven-plugin</artifactId>
 				<version>5.2.1</version>
 				<configuration>
-					<persistenceUnitName>Unit</persistenceUnitName>
+					<persistenceUnitName>CentralUnit</persistenceUnitName>
 					<api>JDO</api>
 					<log4jConfiguration>${config.files.dir}/log4j.properties</log4jConfiguration>
 					<verbose>true</verbose>

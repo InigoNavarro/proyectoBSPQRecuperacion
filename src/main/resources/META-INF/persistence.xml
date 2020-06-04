@@ -5,9 +5,9 @@
         http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" version="2.1">
 
     <!-- JDO tutorial "unit" -->
-    <persistence-unit name="Unit">
-	<class>es.deusto.SQP.BD.Objetos.Juego</class>
-	<class>es.deusto.SQP.BD.Objetos.Reserva</class>
+    <persistence-unit name="CentralUnit">
+	<class>es.deusto.SPQ.BD.Objetos.Juego</class>
+	<class>es.deusto.SPQ.BD.Objetos.Reserva</class>
 	<class>es.deusto.SPQ.BD.Objetos.Socio</class>
 	<exclude-unlisted-classes/>
         <properties>
