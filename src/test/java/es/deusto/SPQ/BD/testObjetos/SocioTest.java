@@ -28,7 +28,6 @@ class SocioTest {
 
 	@Test
 	void socioTest() {
-		System.out.println(Mockito.when(s.getNombreApellido()) ); 
 		Mockito.when(s.getNombreApellido()).thenReturn("Inigo Navarro");
 		Mockito.when(s.getPts()).thenReturn(500);
 		Mockito.when(s.getDireccion()).thenReturn("123445");
@@ -41,9 +40,4 @@ class SocioTest {
 		assertEquals(123454321, s.getTelefono());
 		assertEquals(20, s.getEdad());
 	}
-	
-	public static void main(String[] args) {
-    SocioTest st = new SocioTest();
-    st.socioTest();
-  }
 }

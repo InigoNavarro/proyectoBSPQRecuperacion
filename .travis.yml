@@ -1,13 +1,23 @@
+language: java
 
-jobs:
-  include:
-    - name: "Java 11"
-      jdk: openjdk11
+jdk: openjdk11
       
-cache:
-  directories:
-    - $HOME/.m2
+script:
+ - mvn clean compile
+ - mvn test
 
+branches:
+	only:
+		-master
+		
+notifications:
+  email:
+    recipients:
+    	- ing@amigosdelwindsurf.es
+    	
+    	on_success: always
+    	on_failure: always
+    
 after_success:
   - mvn clean cobertura:cobertura org.eluder.coveralls:coveralls-maven-plugin:report
   - mvn clean test jacoco:report coveralls:report
