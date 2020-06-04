@@ -19,7 +19,7 @@ branches:
 notifications:
   email:
     recipients:
-      - ing@amigosdelwindsurf.es
+      - inigonavarro@opendeusto.es
       
     on_success: always
     on_failure: always
