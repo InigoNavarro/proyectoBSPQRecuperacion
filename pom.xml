@@ -145,7 +145,7 @@
 						</goals>
 					</execution>
 					<execution>
-						<id>jacoco-check</id>
+						<id>default-jacoco-check</id>
 						<goals>
 							<goal>check</goal>
 						</goals>

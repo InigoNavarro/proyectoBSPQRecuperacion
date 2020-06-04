@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 import es.deusto.SPQ.BD.Objetos.Socio;
 
@@ -19,15 +20,15 @@ class SocioTest {
 
 	@Mock
 	Socio s;
-	
+
 	@Before
-	public void setUp() {
-		
+	public void setUp() {	
+		MockitoAnnotations.initMocks(this.getClass());
 	}
-	
+
 	@Test
 	void socioTest() {
-		
+		System.out.println(Mockito.when(s.getNombreApellido()) ); 
 		Mockito.when(s.getNombreApellido()).thenReturn("Inigo Navarro");
 		Mockito.when(s.getPts()).thenReturn(500);
 		Mockito.when(s.getDireccion()).thenReturn("123445");
@@ -40,4 +41,9 @@ class SocioTest {
 		assertEquals(123454321, s.getTelefono());
 		assertEquals(20, s.getEdad());
 	}
+	
+	public static void main(String[] args) {
+    SocioTest st = new SocioTest();
+    st.socioTest();
+  }
 }
