@@ -27,8 +27,7 @@ Hay 6 ventanas:
 Para crear las ventanas se hara uso de javaFX.
 
 # Base de Datos
-Para la base de datos se hara uso de DataNucleos
-La base de datos consta de 3 clases:
+Para la base de datos se hara uso de DataNucleos. La base de datos consta de 3 clases:
 
   -Juego, con los atributos JuegoId, un String; NombreJ, un String; Precio, un double; Creadores, un String; numVendidos, un int y copiasDisp, un boolean.
   
