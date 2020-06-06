@@ -11,6 +11,8 @@ cache:
 script:
  - mvn clean compile
  - mvn test
+ - mvn datanucleus:enhance
+ - mvn datanucleus:schema-create
 
 branches:
   only:
