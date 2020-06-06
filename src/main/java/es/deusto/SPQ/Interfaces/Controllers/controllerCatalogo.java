@@ -1,6 +1,8 @@
 package es.deusto.SPQ.Interfaces.Controllers;
 
 import es.deusto.SPQ.App;
+import es.deusto.SPQ.BD.Gestores.GestorJuego;
+import es.deusto.SPQ.BD.Objetos.Juego;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,8 +27,8 @@ import javafx.stage.Stage;
  */
 public class controllerCatalogo {
 
-	public static ObservableList<String> juegos = FXCollections.observableArrayList();
-
+	public static ObservableList<Juego> juegos = FXCollections.observableArrayList();
+	
 	@FXML
 	private TextField textoNombreJuego;
 
@@ -40,7 +42,7 @@ public class controllerCatalogo {
 	private Button botonVolver;
 
 	@FXML
-	private ListView<String> listaJuegos;
+	private ListView<Juego> listaJuegos;
 
 	/**
 	 * Boton que borra el historial
@@ -59,11 +61,15 @@ public class controllerCatalogo {
 	@FXML
 	void buscarJuego(ActionEvent event) {
 		//Configurar la BD
+		Juego j1 = GestorJuego.selectJuego(textoNombreJuego.getText());
+		if(j1 == null) {
 		Alert alert = new Alert(AlertType.INFORMATION, "El juego " + textoNombreJuego.getText() + " no existe en nuestra Base de Datos."
 				, ButtonType.OK);
 		alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
 		alert.show();
-		juegos.add("El juego " + textoNombreJuego.getText() + " no existe en nuestra Base de Datos.");
+		}else {
+			juegos.add(j1);
+		}
 		listaJuegos.setItems(juegos);
 	}
 

@@ -18,6 +18,8 @@ import javafx.stage.Stage;
  */
 public class controllerJuego {
 
+	
+	
 	@FXML
 	private TextField buscadorJuego;
 

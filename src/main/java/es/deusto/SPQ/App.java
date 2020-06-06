@@ -14,33 +14,37 @@ import javafx.stage.Stage;
  */
 public class App extends Application {
 
-    private static Scene scene;
+	private static App app = null;   
+	private static Scene scene;
 
-    public App() {
-    }
-    
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader loader = getFXMLLoader("paginaPrin");
-        scene = new Scene(loader.load(),650, 450);
-        stage.setScene(scene);
-        stage.show();
-    }
+	public App() {
+		app = this;
+		CrearDatosBD cdBD = new CrearDatosBD();
+		cdBD.cargarBase();
+	}
 
-    public static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
-    }
+	@Override
+	public void start(Stage stage) throws IOException {
+		FXMLLoader loader = getFXMLLoader("paginaPrin");
+		scene = new Scene(loader.load(),650, 450);
+		stage.setScene(scene);
+		stage.show();
+	}
 
-    public static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-        return fxmlLoader.load();
-    }
+	public static void setRoot(String fxml) throws IOException {
+		scene.setRoot(loadFXML(fxml));
+	}
 
-    public static FXMLLoader getFXMLLoader(String fxml) throws IOException {
-        return new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-    }
+	public static Parent loadFXML(String fxml) throws IOException {
+		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+		return fxmlLoader.load();
+	}
 
-    public static void main(String[] args) {
-        launch();
-    }
+	public static FXMLLoader getFXMLLoader(String fxml) throws IOException {
+		return new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+	}
+
+	public static void main(String[] args) {
+		launch();
+	}
 }
