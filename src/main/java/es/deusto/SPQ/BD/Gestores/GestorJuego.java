@@ -7,6 +7,7 @@ import javax.jdo.Query;
 import javax.jdo.Transaction;
 
 import es.deusto.SPQ.BD.Objetos.Juego;
+import javafx.collections.ObservableList;
 
 public class GestorJuego extends GestorBD {
 
@@ -101,6 +102,31 @@ public class GestorJuego extends GestorBD {
 			upQuery.execute();
 			transaction.commit();
 		} catch (Exception ex) {
+		} finally {
+			if (transaction.isActive()) {
+				transaction.rollback();
+			}
+			pm.close();
+		}
+	}
+	
+	public static List<Juego> listaJuegosOrdenada() {
+		PersistenceManager pm = GestorBD.getPMF().getPersistenceManager();
+		Transaction transaction = null;
+		transaction = pm.currentTransaction();
+		List<Juego> re;
+		try {
+			transaction.begin();
+			Query<?> upQuery =
+					pm.newQuery(
+							"SELECT FROM "
+									+ Juego.class.getName()									
+									+ " ORDER by numVendidos ASC");
+			re = (List<Juego>) upQuery.execute();
+			transaction.commit();
+			return re;
+		} catch (Exception ex) {
+			return null;
 		} finally {
 			if (transaction.isActive()) {
 				transaction.rollback();

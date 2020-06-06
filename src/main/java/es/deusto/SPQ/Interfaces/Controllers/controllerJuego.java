@@ -129,24 +129,25 @@ public class controllerJuego {
 					, ButtonType.OK);
 			alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
 			alert.show();
-		}
-		String nombreSinEspacios = fieldNombre.getText().replaceAll(" ", "");
-		String companiaSinEspacios = fieldCompania.getText().replaceAll(" ", "");
-		String precioSinEspacios = fieldPrecio.getText().replaceAll(" ", "");
-		String ventasSinEspacios = fieldVentas.getText().replaceAll(" ", "");
-		String copiasDispSinEspacios = fieldCopiasDisp.getText().replaceAll(" ", "");
-		if(nombreSinEspacios.equals("") && companiaSinEspacios.equals("") && precioSinEspacios.equals("") && ventasSinEspacios.equals("") 
-				&& copiasDispSinEspacios.equals("")) {
-			Alert alert = new Alert(AlertType.INFORMATION, "Los fields tienen que tener contenido"
-					, ButtonType.OK);
-			alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-			alert.show();
 		}else {
-			int precio = Integer.parseInt(fieldPrecio.getText());
-			int ventas = Integer.parseInt(fieldVentas.getText());
-			boolean b1;
-			b1 = Boolean.parseBoolean(fieldCopiasDisp.getText());
-			GestorJuego.updateJuego(fieldNombre.getText(), precio, fieldCompania.getText(), ventas, b1, j1.getNombreJuego());
+			String nombreSinEspacios = fieldNombre.getText().replaceAll(" ", "");
+			String companiaSinEspacios = fieldCompania.getText().replaceAll(" ", "");
+			String precioSinEspacios = fieldPrecio.getText().replaceAll(" ", "");
+			String ventasSinEspacios = fieldVentas.getText().replaceAll(" ", "");
+			String copiasDispSinEspacios = fieldCopiasDisp.getText().replaceAll(" ", "");
+			if(nombreSinEspacios.equals("") && companiaSinEspacios.equals("") && precioSinEspacios.equals("") && ventasSinEspacios.equals("") 
+					&& copiasDispSinEspacios.equals("")) {
+				Alert alert = new Alert(AlertType.INFORMATION, "Los fields tienen que tener contenido"
+						, ButtonType.OK);
+				alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+				alert.show();
+			}else {
+				int precio = Integer.parseInt(fieldPrecio.getText());
+				int ventas = Integer.parseInt(fieldVentas.getText());
+				boolean b1;
+				b1 = Boolean.parseBoolean(fieldCopiasDisp.getText());
+				GestorJuego.updateJuego(fieldNombre.getText(), precio, fieldCompania.getText(), ventas, b1, j1.getNombreJuego());
+			}
 		}
 	}
 
@@ -158,12 +159,12 @@ public class controllerJuego {
 	void retirarJuego(ActionEvent event) {
 		//Drop BD
 		String nombreSinEspacios = buscadorJuego.getText().replaceAll(" ", "");
-		if(nombreSinEspacios.equals(" ")) {
+		if(nombreSinEspacios.equals("")) {
 			Alert alert = new Alert(AlertType.INFORMATION, "El buscador esta vacio", ButtonType.OK);
 			alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
 			alert.show();
 		}else {
-		GestorJuego.borrarJuego(buscadorJuego.getText());
+			GestorJuego.borrarJuego(buscadorJuego.getText());
 		}
 	}
 

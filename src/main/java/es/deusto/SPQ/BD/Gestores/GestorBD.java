@@ -9,8 +9,6 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
-
-
 public class GestorBD {
     private static GestorBD instance = null;
     private static PersistenceManagerFactory pmf = null;

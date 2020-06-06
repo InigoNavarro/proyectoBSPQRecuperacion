@@ -1,6 +1,8 @@
 package es.deusto.SPQ;
 
 import java.io.IOException;
+
+import es.deusto.SPQ.BD.Gestores.GestorBD;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,6 +18,7 @@ public class App extends Application {
 
 	private static App app = null;   
 	private static Scene scene;
+	private static Stage stage;
 
 	public App() {
 		app = this;
@@ -25,6 +28,8 @@ public class App extends Application {
 
 	@Override
 	public void start(Stage stage) throws IOException {
+		App.stage = stage;
+		GestorBD.getInstance();
 		FXMLLoader loader = getFXMLLoader("paginaPrin");
 		scene = new Scene(loader.load(),650, 450);
 		stage.setScene(scene);

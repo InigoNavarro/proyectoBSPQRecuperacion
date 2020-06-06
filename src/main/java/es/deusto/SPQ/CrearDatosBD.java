@@ -60,6 +60,15 @@ public class CrearDatosBD {
 	
 	public void cargarBase() {
 		GestorJuego.storeJuego(J1);
+		GestorJuego.storeJuego(J2);
+		GestorJuego.storeJuego(J3);
+		GestorJuego.storeJuego(J4);
+		GestorJuego.storeJuego(J5);
+		GestorJuego.storeJuego(J6);
+		GestorJuego.storeJuego(J7);
+		GestorJuego.storeJuego(J8);
+		GestorJuego.storeJuego(J9);
+		GestorJuego.storeJuego(J10);
 		GestorSocio.storeSocio(S1);
 		GestorReserva.storeReserva(R1);
 	}
