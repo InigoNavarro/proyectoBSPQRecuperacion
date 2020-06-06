@@ -1,14 +1,22 @@
 package es.deusto.SPQ.Interfaces.Controllers;
 
 import es.deusto.SPQ.App;
+import es.deusto.SPQ.BD.Gestores.GestorJuego;
+import es.deusto.SPQ.BD.Gestores.GestorSocio;
+import es.deusto.SPQ.BD.Objetos.Juego;
+import es.deusto.SPQ.BD.Objetos.Socio;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
 /**
@@ -40,9 +48,6 @@ public class controllerSocio {
 	private TextField fieldNombre;
 
 	@FXML
-	private TextField fieldApellido;
-
-	@FXML
 	private TextField fieldPuntos;
 
 	@FXML
@@ -60,34 +65,22 @@ public class controllerSocio {
 	 */
 	@FXML
 	void buscarSocio(ActionEvent event) {
-		fieldNombre.setText("");
-		fieldApellido.setText("");
-		fieldDireccion.setText("");
-		fieldPuntos.setText("");
-		fieldTelefono.setText("");
-		fieldNombre.setEditable(false);
-		fieldApellido.setEditable(false);
-		fieldDireccion.setEditable(false);
-		fieldPuntos.setEditable(false);
-		fieldTelefono.setEditable(false);
-	}
-
-	/**
-	 * Boton para crear a un socio
-	 * @param event el click del raton
-	 */
-	@FXML
-	void crearSocio(ActionEvent event) {
-		fieldNombre.setText("");
-		fieldApellido.setText("");
-		fieldDireccion.setText("");
-		fieldPuntos.setText("");
-		fieldTelefono.setText("");
-		fieldNombre.setEditable(true);
-		fieldApellido.setEditable(true);
-		fieldDireccion.setEditable(true);
-		fieldPuntos.setEditable(true);
-		fieldTelefono.setEditable(true);
+		Socio s1 = GestorSocio.selectSocio(buscadorSocio.getText());
+		if(s1 == null) {
+			Alert alert = new Alert(AlertType.INFORMATION, "El socio " + buscadorSocio.getText() + " no existe en nuestra Base de Datos."
+					, ButtonType.OK);
+			alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+			alert.show();
+		}else {
+			fieldNombre.setText(s1.getNombreApellido());
+			fieldPuntos.setText(s1.getPts() + " pts");
+			fieldTelefono.setText(s1.getTelefono() + " tlf");
+			fieldDireccion.setText(s1.getDireccion());
+			fieldNombre.setEditable(false);
+			fieldPuntos.setEditable(false);
+			fieldTelefono.setEditable(false);
+			fieldDireccion.setEditable(false);
+		}
 	}
 
 	/**
@@ -97,12 +90,10 @@ public class controllerSocio {
 	@FXML
 	void editarSocio(ActionEvent event) {
 		fieldNombre.setText("");
-		fieldApellido.setText("");
 		fieldDireccion.setText("");
 		fieldPuntos.setText("");
 		fieldTelefono.setText("");
 		fieldNombre.setEditable(true);
-		fieldApellido.setEditable(true);
 		fieldDireccion.setEditable(true);
 		fieldPuntos.setEditable(true);
 		fieldTelefono.setEditable(true);
@@ -115,7 +106,29 @@ public class controllerSocio {
 	@FXML
 	void guardarSocio(ActionEvent event) {
 		//Update BD
+		Socio s1 = GestorSocio.selectSocio(buscadorSocio.getText());
+		if(s1 == null) {
+			Alert alert = new Alert(AlertType.INFORMATION, "El socio " + buscadorSocio.getText() + " no existe en nuestra Base de Datos o el field esta vacio."
+					, ButtonType.OK);
+			alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+			alert.show();
+		}
+		String nombreSinEspacios = fieldNombre.getText().replaceAll(" ", "");
+		String direccionSinEspacios = fieldDireccion.getText().replaceAll(" ", "");
+		String ptsSinEspacios = fieldPuntos.getText().replaceAll(" ", "");
+		String telefonoSinEspacios = fieldTelefono.getText().replaceAll(" ", "");
+		if(nombreSinEspacios.equals("") && direccionSinEspacios.equals("") && ptsSinEspacios.equals("") && telefonoSinEspacios.equals("")){
+			Alert alert = new Alert(AlertType.INFORMATION, "Los fields tienen que tener contenido"
+					, ButtonType.OK);
+			alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+			alert.show();
+		}else {
+			int telefono = Integer.parseInt(fieldTelefono.getText());
+			int pts = Integer.parseInt(fieldPuntos.getText());
+			//GestorSocio	.updateSocio(fieldNombre.getText(), precio, fieldCompania.getText(), ventas, b1, j1.getNombreJuego());
+		}
 	}
+
 
 	/**
 	 * Boton para retirar un socio
@@ -124,6 +137,14 @@ public class controllerSocio {
 	@FXML
 	void retirarSocio(ActionEvent event) {
 		//Drop BD
+		String nombreSinEspacios = buscadorSocio.getText().replaceAll(" ", "");
+		if(nombreSinEspacios.equals(" ")) {
+			Alert alert = new Alert(AlertType.INFORMATION, "El buscador esta vacio", ButtonType.OK);
+			alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+			alert.show();
+		}else {
+		GestorSocio.borrarSocio(buscadorSocio.getText());
+		}
 	}
 
 	/**

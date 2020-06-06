@@ -45,4 +45,67 @@ public class GestorJuego extends GestorBD {
             pm.close();
         }
     }
+    
+    public static void updateJuego(String nombreNuevo, float precioNuevo, String companiaNueva,int numVentasNuevo,
+			boolean dispNuevo, String nombre) {
+		PersistenceManager pm = GestorBD.getPMF().getPersistenceManager();
+		Transaction transaction = null;
+		transaction = pm.currentTransaction();
+		try {
+			transaction.begin();
+			Query<?> upQuery =
+					pm.newQuery(
+							"UPDATE "
+									+ Juego.class.getName()
+									+ " SET nombreJuego = '"
+									+ nombreNuevo
+									+ "', precio ="
+									+ precioNuevo
+									+ ", empresa ='"
+									+ companiaNueva
+									+"', numVendidos ="
+									+ numVentasNuevo
+									+ ", copiasDisp ="
+									+ dispNuevo
+									+ " WHERE nombreJuego == '"
+									+ nombre
+									+ "'");
+			upQuery.execute();
+			transaction.commit();
+		} catch (Exception ex) {
+		} finally {
+			if (transaction.isActive()) {
+				transaction.rollback();
+			}
+			pm.close();
+		}
+	}
+
+	/**
+	 * Eliminar un juego de la bd
+	 * @param nombre el nombre por el que se encontrara
+	 */
+	public static void borrarJuego(String nombre) {
+		PersistenceManager pm = GestorBD.getPMF().getPersistenceManager();
+		Transaction transaction = null;
+		transaction = pm.currentTransaction();
+		try {
+			transaction.begin();
+			Query<?> upQuery =
+					pm.newQuery(
+							"DELETE FROM "
+									+ Juego.class.getName()
+									+ " WHERE nombreJuego == '"
+									+ nombre
+									+ "'");
+			upQuery.execute();
+			transaction.commit();
+		} catch (Exception ex) {
+		} finally {
+			if (transaction.isActive()) {
+				transaction.rollback();
+			}
+			pm.close();
+		}
+	}
 }

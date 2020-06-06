@@ -1,6 +1,10 @@
 package es.deusto.SPQ.Interfaces.Controllers;
 
 import es.deusto.SPQ.App;
+import es.deusto.SPQ.BD.Gestores.GestorJuego;
+import es.deusto.SPQ.BD.Gestores.GestorReserva;
+import es.deusto.SPQ.BD.Objetos.Juego;
+import es.deusto.SPQ.BD.Objetos.Reserva;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,16 +29,16 @@ import javafx.stage.Stage;
  */
 public class controllerReserva {
 
-	public static ObservableList<String> reservas = FXCollections.observableArrayList();
+	public static ObservableList<Reserva> reservas = FXCollections.observableArrayList();
 
 	@FXML
 	private TextField textoReserva;
 
 	@FXML
 	private Button botonReserva;
-	
+
 	@FXML
-    private TextField textNomApellidoSocio;
+	private TextField textNomApellidoSocio;
 
 	@FXML
 	private Button botonBorrar;
@@ -43,7 +47,7 @@ public class controllerReserva {
 	private Button botonVolver;
 
 	@FXML
-	private ListView<String> listaReservas;
+	private ListView<Reserva> listaReservas;
 
 	/**
 	 * Boton que borra el historial
@@ -62,12 +66,25 @@ public class controllerReserva {
 	@FXML
 	void buscarReserva(ActionEvent event) {
 		//Configurar la BD
-		Alert alert = new Alert(AlertType.INFORMATION, "La reserva no existe en nuestra Base de Datos."
-				, ButtonType.OK);
-		alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-		alert.show();
-		reservas.add("La reserva no existe en nuestra Base de Datos.");
+		String reservaSinEspacios = textoReserva.getText().replaceAll(" ", "");
+		String nomApellidoSinEspacios = textNomApellidoSocio.getText().replaceAll(" ", "");
+		Reserva r1 = GestorReserva.selectReserva(textNomApellidoSocio.getText(), textoReserva.getText());
+		if(reservaSinEspacios.equals("") && nomApellidoSinEspacios.equals("")) {
+			Alert alert = new Alert(AlertType.INFORMATION, "Uno de los fields ha quedado sin rellenar"
+					, ButtonType.OK);
+			alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+			alert.show();
+		}else {
+		if(r1 == null) {
+			Alert alert = new Alert(AlertType.INFORMATION, "La reserva compuesta por " + textoReserva.getText() + " y " + textNomApellidoSocio.getText() + " no existe en nuestra Base de Datos."
+					, ButtonType.OK);
+			alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+			alert.show();
+		}else {
+			reservas.add(r1);
+		}
 		listaReservas.setItems(reservas);
+		}
 	}
 
 	/**

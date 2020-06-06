@@ -148,7 +148,7 @@ public class Juego{
 	 */
 	@Override
 	public String toString() {
-		return "El Juego: " + juegoId + "es el " + nombreJuego + ", cuesta "+ precio+ " euros, lo hizo la empresa "+ empresa+ ", se han vendido "
+		return "El Juego: " + juegoId + " es el " + nombreJuego + ", cuesta "+ precio+ " euros, lo hizo la empresa "+ empresa+ ", se han vendido "
 				+ numVendidos+ " y, ahora mismo, su disponibilidad en tienda es "+ copiasDisp;
 	}
 }

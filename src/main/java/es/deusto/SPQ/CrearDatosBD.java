@@ -1,6 +1,8 @@
 package es.deusto.SPQ;
 
 import es.deusto.SPQ.BD.Gestores.GestorJuego;
+import es.deusto.SPQ.BD.Gestores.GestorReserva;
+import es.deusto.SPQ.BD.Gestores.GestorSocio;
 import es.deusto.SPQ.BD.Objetos.Juego;
 import es.deusto.SPQ.BD.Objetos.Reserva;
 import es.deusto.SPQ.BD.Objetos.Socio;
@@ -58,6 +60,8 @@ public class CrearDatosBD {
 	
 	public void cargarBase() {
 		GestorJuego.storeJuego(J1);
+		GestorSocio.storeSocio(S1);
+		GestorReserva.storeReserva(R1);
 	}
 	
 	public Juego obtenerJuego() {

@@ -55,7 +55,6 @@
          <children>
             <TextField fx:id="buscadorJuego" layoutX="26.0" layoutY="22.0" prefHeight="25.0" prefWidth="518.0" />
             <Button fx:id="botonBuscar" layoutX="557.0" layoutY="22.0" mnemonicParsing="false" onAction="#buscarJuego" text="Buscar" />
-            <Button fx:id="botonCrear" layoutX="557.0" layoutY="57.0" mnemonicParsing="false" onAction="#crearJuego" text="Crear" />
             <Label layoutX="26.0" layoutY="86.0" text="Nombre." />
             <Label layoutX="31.0" layoutY="119.0" text="Precio:" />
             <Label layoutX="21.0" layoutY="154.0" text="Compañia:" />
