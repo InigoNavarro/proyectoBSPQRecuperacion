@@ -55,17 +55,14 @@
          <children>
             <TextField fx:id="buscadorSocio" layoutX="26.0" layoutY="22.0" prefHeight="25.0" prefWidth="518.0" />
             <Button fx:id="botonBuscar" layoutX="557.0" layoutY="22.0" mnemonicParsing="false" onAction="#buscarSocio" text="Buscar" />
-            <Button fx:id="botonCrear" layoutX="557.0" layoutY="57.0" mnemonicParsing="false" onAction="#crearSocio" text="Crear" />
-            <Label layoutX="26.0" layoutY="86.0" text="Nombre." />
-            <Label layoutX="31.0" layoutY="119.0" text="Apellido:" />
+            <Label layoutX="25.0" layoutY="120.0" text="Nombre." />
             <Label layoutX="29.0" layoutY="154.0" text="Puntos." />
             <Label layoutX="24.0" layoutY="187.0" text="Telefono:" />
             <Label layoutX="24.0" layoutY="219.0" text="Direccion" />
             <Button fx:id="botonRetirar" layoutX="553.0" layoutY="95.0" mnemonicParsing="false" onAction="#retirarSocio" text="Retirar" />
             <Button fx:id="botonEditar" layoutX="553.0" layoutY="137.0" mnemonicParsing="false" onAction="#editarSocio" text="Editar" />
             <Button fx:id="botonGuardar" layoutX="551.0" layoutY="183.0" mnemonicParsing="false" onAction="#guardarSocio" text="Guardar" />
-            <TextField fx:id="fieldNombre" layoutX="125.0" layoutY="82.0" />
-            <TextField fx:id="fieldApellido" layoutX="125.0" layoutY="115.0" />
+            <TextField fx:id="fieldNombre" layoutX="125.0" layoutY="116.0" />
             <TextField fx:id="fieldPuntos" layoutX="125.0" layoutY="150.0" />
             <TextField fx:id="fieldTelefono" layoutX="125.0" layoutY="183.0" />
             <TextField fx:id="fieldDireccion" layoutX="125.0" layoutY="215.0" />
