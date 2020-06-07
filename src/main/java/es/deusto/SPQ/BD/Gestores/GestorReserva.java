@@ -1,8 +1,6 @@
 package es.deusto.SPQ.BD.Gestores;
 
 import java.util.List;
-import java.util.logging.Level;
-
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
@@ -24,7 +22,7 @@ public class GestorReserva extends GestorBD {
 	}
 
 	public static Reserva selectReserva(String socioNombreApellido, String juegoNombre) {
-		PersistenceManager pm = GestorBD.getPMF().getPersistenceManager();
+		pm = GestorBD.getPMF().getPersistenceManager();
 		Transaction transaction = null;
 		transaction = pm.currentTransaction();
 		try {
@@ -33,6 +31,7 @@ public class GestorReserva extends GestorBD {
 			q.setFilter("socioNombreApellido == :socioNombreApellido && juegoNombre == :juegoNombre");
 			q.setParameters(socioNombreApellido, juegoNombre);
 			Reserva res1 = q.executeUnique();
+//			pm.flush();
 			transaction.commit();
 			return res1;
 

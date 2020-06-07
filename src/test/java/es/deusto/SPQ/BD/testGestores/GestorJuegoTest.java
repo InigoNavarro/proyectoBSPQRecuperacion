@@ -23,7 +23,7 @@ class GestorJuegoTest {
   
   @Test
   void obtenerUnJuego() {
-	  assertEquals("Transistor", GestorJuego.selectJuego("Transistor").getNombreJuego());
+	  assertEquals("Bastion", GestorJuego.selectJuego("Bastion").getNombreJuego());
   }
   
   @Test
@@ -35,6 +35,6 @@ class GestorJuegoTest {
   @Test
   void actualizarUnJuego() {
 	  GestorJuego.updateJuego("Bastion", 10, "ERP", 32, true, "Bastion");
-	  assertNotEquals(10, GestorJuego.selectJuego("Bastion").getPrecio());  
+	  assertEquals(10, GestorJuego.selectJuego("Bastion").getPrecio());  
   }
 }

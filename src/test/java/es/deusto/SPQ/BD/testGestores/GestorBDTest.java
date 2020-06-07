@@ -2,9 +2,12 @@ package es.deusto.SPQ.BD.testGestores;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.List;
+
+import org.junit.Rule;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.github.noconnor.junitperf.JUnitPerfRule;
 import com.github.noconnor.junitperf.JUnitPerfTest;
 
 import es.deusto.SPQ.BD.Gestores.GestorBD;
@@ -14,6 +17,9 @@ import es.deusto.SPQ.BD.Objetos.Juego;
 
 class GestorBDTest {
 
+	@Rule
+	public JUnitPerfRule perfTestRule = new JUnitPerfRule();
+	
 	@BeforeEach
 	void setUp() throws Exception {
 	}

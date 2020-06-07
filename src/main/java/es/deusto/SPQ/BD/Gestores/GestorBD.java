@@ -47,6 +47,7 @@ public class GestorBD {
             transaction.begin();
             pm.setIgnoreCache(true);
             pm.makePersistent(object);
+//            pm.flush();
             transaction.commit();
         } catch (Exception e) {
             System.out.println("Error" + e.getMessage());
@@ -69,6 +70,7 @@ public class GestorBD {
             Query<T> q = pm.newQuery(objectoClass);
             q.ignoreCache(true);
             List<T> res = q.executeList();
+//            pm.flush();
             tx.commit();
             resultados = res;
         } catch (Exception e) {

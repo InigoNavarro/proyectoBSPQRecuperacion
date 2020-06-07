@@ -59,7 +59,7 @@ public class controllerGrafico implements Initializable{
 		}
 		final CategoryAxis xAxis = new CategoryAxis();
 		final NumberAxis yAxis = new NumberAxis();
-		graficoJuegos.setTitle("Grafico juegos TOP");
+		graficoJuegos.setTitle("Grafico juegos");
 		xAxis.setLabel("Juego");       
 		yAxis.setLabel("Vendidos");
 		XYChart.Series series = new XYChart.Series();

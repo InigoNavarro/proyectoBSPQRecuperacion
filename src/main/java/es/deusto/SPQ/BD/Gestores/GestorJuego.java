@@ -35,6 +35,7 @@ public class GestorJuego extends GestorBD {
             q.setFilter("nombreJuego == :nombreJuego");
             q.setParameters(nombreJuego);
             Juego j1 = (Juego) q.executeUnique();
+//            pm.flush();
             transaction.commit();
             return j1;
         } catch (Exception ex) {
@@ -72,6 +73,7 @@ public class GestorJuego extends GestorBD {
 									+ nombre
 									+ "'");
 			upQuery.execute();
+//			pm.flush();
 			transaction.commit();
 		} catch (Exception ex) {
 		} finally {
@@ -100,6 +102,7 @@ public class GestorJuego extends GestorBD {
 									+ nombre
 									+ "'");
 			upQuery.execute();
+//			pm.flush();
 			transaction.commit();
 		} catch (Exception ex) {
 		} finally {
@@ -110,7 +113,8 @@ public class GestorJuego extends GestorBD {
 		}
 	}
 	
-	public static List<Juego> listaJuegosOrdenada() {
+	@SuppressWarnings("unchecked")
+  public static List<Juego> listaJuegosOrdenada() {
 		PersistenceManager pm = GestorBD.getPMF().getPersistenceManager();
 		Transaction transaction = null;
 		transaction = pm.currentTransaction();
@@ -119,10 +123,11 @@ public class GestorJuego extends GestorBD {
 			transaction.begin();
 			Query<?> upQuery =
 					pm.newQuery(
-							"SELECT FROM "
+							"SELECT  FROM "
 									+ Juego.class.getName()									
-									+ " ORDER by numVendidos ASC");
+									+ " ORDER BY numVendidos ASC");
 			re = (List<Juego>) upQuery.execute();
+//			pm.flush();
 			transaction.commit();
 			return re;
 		} catch (Exception ex) {

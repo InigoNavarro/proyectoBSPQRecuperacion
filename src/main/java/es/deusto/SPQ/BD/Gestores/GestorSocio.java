@@ -25,7 +25,7 @@ public class GestorSocio extends GestorBD {
 	}
 
 	public static Socio selectSocio(String nombreApellido) {
-		PersistenceManager pm = GestorBD.getPMF().getPersistenceManager();
+		pm = GestorBD.getPMF().getPersistenceManager();
 		Transaction transaction = null;
 		transaction = pm.currentTransaction();
 		try {
@@ -48,7 +48,7 @@ public class GestorSocio extends GestorBD {
 
 	public static void updateSocio(String nombreNuevo, int pts, String direccion,int telefono,
 		String nombreApellido) {
-		PersistenceManager pm = GestorBD.getPMF().getPersistenceManager();
+		pm = GestorBD.getPMF().getPersistenceManager();
 		Transaction transaction = null;
 		transaction = pm.currentTransaction();
 		try {
@@ -70,6 +70,7 @@ public class GestorSocio extends GestorBD {
 									+ nombreApellido
 									+ "'");
 			upQuery.execute();
+//			pm.flush();
 			transaction.commit();
 		} catch (Exception ex) {
 		} finally {
@@ -85,7 +86,7 @@ public class GestorSocio extends GestorBD {
 	 * @param nombre el nombre por el que se encontrara
 	 */
 	public static void borrarSocio(String nombre) {
-		PersistenceManager pm = GestorBD.getPMF().getPersistenceManager();
+		pm = GestorBD.getPMF().getPersistenceManager();
 		Transaction transaction = null;
 		transaction = pm.currentTransaction();
 		try {
@@ -98,6 +99,7 @@ public class GestorSocio extends GestorBD {
 									+ nombre
 									+ "'");
 			upQuery.execute();
+//			pm.flush();
 			transaction.commit();
 		} catch (Exception ex) {
 		} finally {

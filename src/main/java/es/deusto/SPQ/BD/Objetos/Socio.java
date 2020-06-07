@@ -8,7 +8,7 @@ import javax.jdo.annotations.*;
  *
  */
 @PersistenceCapable
-public class Socio {
+public class Socio extends DataObject<Socio> {
 	@PrimaryKey
 	@Persistent
 	@Column(name = "socio_ID")

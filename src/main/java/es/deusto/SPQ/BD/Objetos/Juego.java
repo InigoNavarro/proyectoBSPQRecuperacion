@@ -8,7 +8,7 @@ import javax.jdo.annotations.*;
  *
  */
 @PersistenceCapable
-public class Juego{
+public class Juego extends DataObject<Juego> {
 
 	@PrimaryKey
 	@Persistent

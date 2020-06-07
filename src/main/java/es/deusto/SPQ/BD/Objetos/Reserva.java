@@ -7,7 +7,7 @@ import javax.jdo.annotations.*;
  *
  */
 @PersistenceCapable
-public class Reserva {
+public class Reserva extends DataObject<Reserva> {
 	@PrimaryKey
 	@Persistent
 	@Column(name = "reserva_ID")
