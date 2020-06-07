@@ -2,13 +2,9 @@ package es.deusto.SPQ.BD.testGestores;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.List;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import es.deusto.SPQ.CrearDatosBD;
 import es.deusto.SPQ.BD.Gestores.GestorReserva;
 import es.deusto.SPQ.BD.Objetos.Reserva;
 
@@ -16,9 +12,7 @@ class GestorReservaTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		CrearDatosBD cdBD = new CrearDatosBD();
-		cdBD.cargarBase();
-	}
+			}
 
 	@Test
 	void testTodasLasReservas() {

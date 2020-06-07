@@ -1,13 +1,12 @@
 package es.deusto.SPQ.BD.testGestores;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.List;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import es.deusto.SPQ.CrearDatosBD;
+import com.github.noconnor.junitperf.JUnitPerfTest;
+
 import es.deusto.SPQ.BD.Gestores.GestorBD;
 import es.deusto.SPQ.BD.Gestores.GestorJuego;
 import es.deusto.SPQ.BD.Objetos.Juego;
@@ -17,8 +16,6 @@ class GestorBDTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		CrearDatosBD cdbd = new CrearDatosBD();
-		cdbd.cargarBase();
 	}
 
 	@Test
@@ -26,6 +23,11 @@ class GestorBDTest {
 		assertNotNull(GestorBD.getInstance());
 	}
 
+	@JUnitPerfTest(threads = 1,
+            durationMs = 1_000,
+            rampUpPeriodMs = 200,
+            warmUpMs = 200,
+            maxExecutionsPerSecond = 11_000)
 	@Test
 	public void storeTest() {
 		Juego j = new Juego("J001", "A", 13, "B", 12, true);
@@ -34,6 +36,11 @@ class GestorBDTest {
 		assertEquals(j.getNombreJuego(), j2.getNombreJuego());
 	}
 	
+	@JUnitPerfTest(threads = 1,
+            durationMs = 1_000,
+            rampUpPeriodMs = 200,
+            warmUpMs = 200,
+            maxExecutionsPerSecond = 11_000)
 	@Test
 	public void selectListaTest() {
 		List<Juego> listaJuego;

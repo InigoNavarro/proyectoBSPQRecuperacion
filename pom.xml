@@ -258,6 +258,11 @@
 				<configuration>
 					<forkCount>1</forkCount>
 					<testFailureIgnore>true</testFailureIgnore>
+					<argLine>--add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED --add-exports
+                        javafx.graphics/com.sun.glass.ui.PlatformFactory=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.glass.ui=ALL-UNNAMED
+                        -Djava.awt.headless=true -Dtestfx.robot=glass -Dtestfx.headless=true -Dprism.order=sw
+                    </argLine>
 				</configuration>
 				<executions>
 					<execution>
