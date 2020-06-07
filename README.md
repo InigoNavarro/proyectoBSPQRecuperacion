@@ -6,7 +6,28 @@ Este es el proyecto que he realizado para poder recuperar la nota de la asignatu
 El proyecto sera un applicación que tiene como idea principal la gestión de una tienda de videojuegos.
 
 # Comandos para instalación
+  - mvn install
+
+# Comandos para usar la aplicación
+  - mvn javafx:run
   
+  La primera vez que se ejecute habra que ir a App.java:
+  
+  (Si se tiene en modo Navigator en Eclipse)
+  
+  ![image](https://user-images.githubusercontent.com/33113628/83974040-95f69400-a8ea-11ea-8bee-0afafe21bac6.png)
+ 
+  (Si se tiene en modo Package Explorer en Eclipse)
+  
+  ![image](https://user-images.githubusercontent.com/33113628/83974027-85461e00-a8ea-11ea-9f35-b399ab5394a8.png)
+  
+  Y ahi descomentar estas dos linea:
+  
+  ![image](https://user-images.githubusercontent.com/33113628/83974079-e40b9780-a8ea-11ea-9e78-63b617db14cd.png)
+  
+  Una vez hecho esto, estas dos lineas habria que comentarlas para que no salte la excepción flush().
+  
+# Comandos para generar documentación
 
 # Interfaz
 Hay 6 ventanas:
@@ -34,6 +55,10 @@ Para la base de datos se hara uso de DataNucleos. La base de datos consta de 3 c
   -Socio, con los atributos SocioID, un String; NombreApellido, un String; y pts, un int.
   
   -Reserva, con los atributos id y nombre de las otras dos tablas.
+
+Estos son los datos que estan en la BD sin haber realizado ninguno cambio mediante teses o al hacer uso de la aplicación:
+
+![image](https://user-images.githubusercontent.com/33113628/83974143-4c5a7900-a8eb-11ea-9921-5295edc643a0.png)
 
 # Hecho por:
 <td align="center"><a href="https://github.com/InigoNavarro">
