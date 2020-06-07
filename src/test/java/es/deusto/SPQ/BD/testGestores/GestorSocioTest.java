@@ -24,14 +24,16 @@ class GestorSocioTest {
 
 	@Test
 	void actualizarUnSocio() {
-		GestorSocio.updateSocio("SS", 13, "ABA", 123, "Inigo Navarro");
-		assertEquals("SS", GestorSocio.selectSocio("SS").getNombreApellido());
+		Socio s = new Socio("S2", "SSSSSSS", 13, "ABA", 123);
+		GestorSocio.storeSocio(s);
+		GestorSocio.updateSocio("SSSSSSS2", 13, "ABA", 123, "SSSSSSS");
+		assertEquals("SSSSSSS2", GestorSocio.selectSocio("SSSSSSS2").getNombreApellido());
 	}
 
 	@Test
 	void borrarUnSocio() {
-		GestorSocio.borrarSocio("SS");
-		assertNull(GestorSocio.selectSocio("SS"));
+		GestorSocio.borrarSocio("SSSSSSS2");
+		assertNull(GestorSocio.selectSocio("SSSSSSS2"));
 	}
 
 	@Test

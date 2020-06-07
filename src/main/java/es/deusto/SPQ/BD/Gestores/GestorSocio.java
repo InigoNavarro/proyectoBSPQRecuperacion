@@ -65,8 +65,7 @@ public class GestorSocio extends GestorBD {
 									+ telefono
 									+", direccion ='"
 									+ direccion
-									+ "'"
-									+ " WHERE nombreApellido = '"
+									+ "' WHERE nombreApellido == '"
 									+ nombreApellido
 									+ "'");
 			upQuery.execute();

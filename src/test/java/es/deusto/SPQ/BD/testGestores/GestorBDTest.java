@@ -36,10 +36,9 @@ class GestorBDTest {
             maxExecutionsPerSecond = 11_000)
 	@Test
 	public void storeTest() {
-		Juego j = new Juego("J001", "A", 13, "B", 12, true);
+		Juego j = new Juego("J", "A", 13, "B", 12, true);
 		GestorBD.getInstance().storeObjectInDB(j);
-		Juego j2 = GestorJuego.selectJuego("A");
-		assertEquals(j.getNombreJuego(), j2.getNombreJuego());
+		assertEquals("A",  GestorJuego.selectJuego("A").getNombreJuego());
 	}
 	
 	@JUnitPerfTest(threads = 1,
