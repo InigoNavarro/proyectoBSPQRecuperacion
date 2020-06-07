@@ -28,11 +28,36 @@ El proyecto sera un applicación que tiene como idea principal la gestión de un
   Una vez hecho esto, estas dos lineas habria que comentarlas para que no salte la excepción flush().
   
 # Comandos para generar documentación
+- mvn javadoc:javadoc
+
+Para ver el report hay que ir al fichero target y dentro de este en el fichero site.
+
+![image](https://user-images.githubusercontent.com/33113628/83974394-449bd400-a8ed-11ea-833f-96464770b381.png)
+
+Dentro de este fichero hay que ir a otro llamado apidocs y dentro de el hacer click en index.html
+
+![image](https://user-images.githubusercontent.com/33113628/83974448-a3f9e400-a8ed-11ea-8f84-deef282bcdb7.png)
+
+# Comandos para ver porcentaje de testeo
+- mvn clean verify 
+
+o
+
+- mvn jacoco:report
+
+o 
+
+- mvn clean test jacoco:report
+
+Sea como fuere, eso creara un report report en el fichero target, dentro de site estara el fichero jacoco y, ahi, estara el index.html
+
+![image](https://user-images.githubusercontent.com/33113628/83974712-a0675c80-a8ef-11ea-998d-0367dcebdeb6.png)
+
 
 # Interfaz
 Hay 6 ventanas:
 
-  -Principal, que contedra 5 botones desde lo que se podran abrir el resto de ventanas.
+  -Principal, contiene 5 botones desde lo que se podran abrir el resto de ventanas.
   
   -Catalogo, buscar los juegos disponibles en el almacen de la tienda.
   
@@ -40,7 +65,7 @@ Hay 6 ventanas:
   
   -Reservas, poder ver las reservas realizadas por un cliente.
   
-  -Socio, podra verse la información de todos los clientes y seleccionando a uno se podra editar su info y elimiar antiguos.
+  -Socio, poder ver la información de todos los clientes y seleccionando a uno se podra editar su info y elimiar antiguos.
   
   -Un grafico de 10 juegos para ver cuales se venden y cuales no, desde aqui se podran recargar aquellos con falta de stock.
   
