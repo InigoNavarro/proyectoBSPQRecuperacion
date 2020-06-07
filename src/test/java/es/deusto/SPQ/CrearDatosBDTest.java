@@ -41,7 +41,6 @@ class CrearDatosBDTest {
 		assertEquals(500, STest.getPts());
 		assertEquals("123445", STest.getDireccion());
 		assertEquals(123454321, STest.getTelefono());
-		assertEquals(20, STest.getEdad());
 	}
 	
 	/**

@@ -46,8 +46,8 @@ public class GestorSocio extends GestorBD {
 		}
 	}
 
-	public static void updateJuego(String nombreNuevo, float precioNuevo, String companiaNueva,int numVentasNuevo,
-			boolean dispNuevo, String nombre) {
+	public static void updateSocio(String nombreNuevo, int pts, String direccion,int telefono,
+		String nombreApellido) {
 		PersistenceManager pm = GestorBD.getPMF().getPersistenceManager();
 		Transaction transaction = null;
 		transaction = pm.currentTransaction();
@@ -57,18 +57,17 @@ public class GestorSocio extends GestorBD {
 					pm.newQuery(
 							"UPDATE "
 									+ Socio.class.getName()
-									+ " SET nombreJuego = '"
+									+ " SET nombreApellido = '"
 									+ nombreNuevo
-									+ "', precio ="
-									+ precioNuevo
-									+ ", empresa ='"
-									+ companiaNueva
-									+"', numVendidos ="
-									+ numVentasNuevo
-									+ ", copiasDisp ="
-									+ dispNuevo
-									+ " WHERE nombreJuego == '"
-									+ nombre
+									+ "', pts ="
+									+ pts
+									+ ", telefono ="
+									+ telefono
+									+"', direccion ="
+									+ direccion
+									+ "'"
+									+ " WHERE nombreApellido = '"
+									+ nombreApellido
 									+ "'");
 			upQuery.execute();
 			transaction.commit();

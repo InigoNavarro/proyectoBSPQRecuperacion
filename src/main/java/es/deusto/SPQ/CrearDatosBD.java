@@ -36,16 +36,16 @@ public class CrearDatosBD {
 	Juego J19 = new Juego("J019", "Katana Zero", 13, "Askiisoft", 4859, true);
 	Juego J20 = new Juego("J020", "Left 4 Dead 2", 8, "Valve", 5800, false);
 	
-	Socio S1 = new Socio("S001", "Inigo Navarro", 500, "123445", 123454321, 20);
-	Socio S2 = new Socio("S002", "Inigo Sanrro", 450, "123wqe", 111111111, 20);
-	Socio S3 = new Socio("S003", "Unai Montim", 100, "1234rqd", 222222222, 21);
-	Socio S4 = new Socio("S004", "Lopa Mopa", 125, "12345dwsa", 222222223, 21);
-	Socio S5 = new Socio("S005", "Ismo Urrutia", 150, "1245gag", 333333333, 19);
-	Socio S6 = new Socio("S006", "Gomi el Gomas", 300, "168ff", 333333334, 20);
-	Socio S7 = new Socio("S007", "Romo Zabala", 350, "156uhasd", 444444444, 20);
-	Socio S8 = new Socio("S008", "Alejandria Canadiense", 250, "qdeq2e", 444444445, 21);
-	Socio S9 = new Socio("S009", "Billy Joel", 140, "wdaf", 555555555, 71);
-	Socio S10 = new Socio("S010", "Bon Jovi", 180, "dasfag", 555555556, 58);
+	Socio S1 = new Socio("S001", "Inigo Navarro", 500, "123445", 123454321);
+	Socio S2 = new Socio("S002", "Inigo Sanrro", 450, "123wqe", 111111111);
+	Socio S3 = new Socio("S003", "Unai Montim", 100, "1234rqd", 222222222);
+	Socio S4 = new Socio("S004", "Lopa Mopa", 125, "12345dwsa", 222222223);
+	Socio S5 = new Socio("S005", "Ismo Urrutia", 150, "1245gag", 333333333);
+	Socio S6 = new Socio("S006", "Gomi el Gomas", 300, "168ff", 333333334);
+	Socio S7 = new Socio("S007", "Romo Zabala", 350, "156uhasd", 444444444);
+	Socio S8 = new Socio("S008", "Alejandria Canadiense", 250, "qdeq2e", 444444445);
+	Socio S9 = new Socio("S009", "Billy Joel", 140, "wdaf", 555555555);
+	Socio S10 = new Socio("S010", "Bon Jovi", 180, "dasfag", 555555556);
 			
 	Reserva R1 = new Reserva("R001", "J001", "S001", "Transistor", "Inigo Navarro");
 	Reserva R2 = new Reserva("R002", "J010", "S001", "Xenoblade Chronicles", "Inigo Navarro");

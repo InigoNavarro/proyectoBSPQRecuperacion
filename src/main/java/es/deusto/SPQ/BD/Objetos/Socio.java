@@ -22,8 +22,6 @@ public class Socio {
 	private String direccion;
 	@Persistent
 	private int telefono;
-	@Persistent
-	private int edad;
 
 	/**
 	 * Constructor completo de un objeto Socio
@@ -34,14 +32,13 @@ public class Socio {
 	 * @param telefono el telefono de un socio
 	 * @param edad la edad de un socio
 	 */
-	public Socio(String socioId, String nombreApellido, int pts, String direccion, int telefono, int edad) {
+	public Socio(String socioId, String nombreApellido, int pts, String direccion, int telefono) {
 		super();
 		this.socioId = socioId;
 		this.nombreApellido = nombreApellido;
 		this.pts = pts;
 		this.direccion = direccion;
 		this.telefono = telefono;
-		this.edad = edad;
 	}
 
 	/**
@@ -120,25 +117,11 @@ public class Socio {
 		this.telefono = telefono;}
 
 	/**
-	 * Metodo para obtener la edad de un socio
-	 * @return esa edad del socio
-	 */
-	public int getEdad() {
-		return edad;}
-
-	/**
-	 * Cambiar la edad de un socio
-	 * @param edad la edad a la que se quiere cambiar
-	 */
-	public void setEdad(int edad) {
-		this.edad = edad;}
-
-	/**
 	 * To string de la clase socio
 	 */
 	@Override
 	public String toString() {
 		return "El socio "+ socioId + " se llama "+ nombreApellido+ ", tiene "+ pts+ " puntos, su direccion es "+ direccion
-				+ ", su telefono es "+ telefono+ " y su edad es  "+ edad;
+				+ ", su telefono es "+ telefono+ ".";
 	}
 }

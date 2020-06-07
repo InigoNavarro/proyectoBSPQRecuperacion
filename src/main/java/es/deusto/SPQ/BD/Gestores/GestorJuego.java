@@ -68,7 +68,7 @@ public class GestorJuego extends GestorBD {
 									+ numVentasNuevo
 									+ ", copiasDisp ="
 									+ dispNuevo
-									+ " WHERE nombreJuego == '"
+									+ " WHERE nombreJuego = '"
 									+ nombre
 									+ "'");
 			upQuery.execute();

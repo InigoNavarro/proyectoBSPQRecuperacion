@@ -32,12 +32,10 @@ class SocioTest {
 		Mockito.when(s.getPts()).thenReturn(500);
 		Mockito.when(s.getDireccion()).thenReturn("123445");
 		Mockito.when(s.getTelefono()).thenReturn(123454321);
-		Mockito.when(s.getEdad()).thenReturn(20);
-
+		
 		assertEquals("Inigo Navarro", s.getNombreApellido());
 		assertEquals(500, s.getPts());
 		assertEquals("123445", s.getDireccion());
 		assertEquals(123454321, s.getTelefono());
-		assertEquals(20, s.getEdad());
 	}
 }
