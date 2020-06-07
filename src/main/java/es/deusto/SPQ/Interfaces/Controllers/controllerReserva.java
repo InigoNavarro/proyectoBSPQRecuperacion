@@ -1,5 +1,7 @@
 package es.deusto.SPQ.Interfaces.Controllers;
 
+import java.util.List;
+
 import es.deusto.SPQ.App;
 import es.deusto.SPQ.BD.Gestores.GestorJuego;
 import es.deusto.SPQ.BD.Gestores.GestorReserva;
@@ -62,9 +64,10 @@ public class controllerReserva {
 	 */
 	@FXML
 	void buscarReserva(ActionEvent event) {
-		//Configurar la BD
+		reservas.clear();
+		listaReservas.setItems(reservas);
 		String nomApellidoSinEspacios = textNomApellidoSocio.getText().replaceAll(" ", "");
-		Reserva r1 = GestorReserva.selectReserva(textNomApellidoSocio.getText());
+		List<Reserva> r1 = GestorReserva.selectReservas(textNomApellidoSocio.getText());
 		if(nomApellidoSinEspacios.equals("")) {
 			Alert alert = new Alert(AlertType.INFORMATION, "Hay que introducir un nombre de Socio"
 					, ButtonType.OK);
@@ -77,7 +80,9 @@ public class controllerReserva {
 			alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
 			alert.show();
 		}else {
-			reservas.add(r1);
+			for(Reserva r: r1) {
+				reservas.add(r);
+			}
 		}
 		listaReservas.setItems(reservas);
 		}

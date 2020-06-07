@@ -37,4 +37,10 @@ class GestorJuegoTest {
 	  GestorJuego.updateJuego("Pyre", 10, "ERP", 32, true, "Pyre");
 	  assertEquals(10, GestorJuego.selectJuego("Pyre").getPrecio());  
   }
+  
+  @Test
+  void recargarUnJuego() {
+	  GestorJuego.recargarJuego(false, "Pyre");
+	  assertEquals(false, GestorJuego.selectJuego("Pyre").isCopiasDisp());  
+  }
 }

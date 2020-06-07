@@ -70,7 +70,25 @@ public class CrearDatosBD {
 		GestorJuego.storeJuego(J9);
 		GestorJuego.storeJuego(J10);
 		GestorSocio.storeSocio(S1);
+		GestorSocio.storeSocio(S2);
+		GestorSocio.storeSocio(S3);
+		GestorSocio.storeSocio(S4);
+		GestorSocio.storeSocio(S5);
+		GestorSocio.storeSocio(S6);
+		GestorSocio.storeSocio(S7);
+		GestorSocio.storeSocio(S8);
+		GestorSocio.storeSocio(S9);
+		GestorSocio.storeSocio(S10);
 		GestorReserva.storeReserva(R1);
+		GestorReserva.storeReserva(R2);
+		GestorReserva.storeReserva(R3);
+		GestorReserva.storeReserva(R4);
+		GestorReserva.storeReserva(R5);
+		GestorReserva.storeReserva(R6);
+		GestorReserva.storeReserva(R7);
+		GestorReserva.storeReserva(R8);
+		GestorReserva.storeReserva(R9);
+		GestorReserva.storeReserva(R10);
 	}
 	
 	public Juego obtenerJuego() {
