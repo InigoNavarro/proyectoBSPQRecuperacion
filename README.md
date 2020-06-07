@@ -6,7 +6,16 @@ Este es el proyecto que he realizado para poder recuperar la nota de la asignatu
 El proyecto sera un applicación que tiene como idea principal la gestión de una tienda de videojuegos.
 
 # Comandos para instalación
+  - mvn install
+
+# Comandos para usar
+  - mvn javafx:run
   
+  La primera vez que se ejecute habra que ir a App.java:
+  ![image](https://user-images.githubusercontent.com/33113628/83973916-e0c3dc00-a8e9-11ea-8c6d-22a91ea7c9a1.png)
+  (Si se tiene en modo Package Explorer en Eclipse)
+  ![image](https://user-images.githubusercontent.com/33113628/83973972-2b455880-a8ea-11ea-9ce7-4ceb220fc9a2.png)
+  (Si se tiene en modo Navigator en Eclipse)
 
 # Interfaz
 Hay 6 ventanas:
