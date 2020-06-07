@@ -15,27 +15,32 @@ import es.deusto.SPQ.BD.Objetos.Socio;
  * @author Ditto
  *
  */
-@RunWith(MockitoJUnitRunner.class)
 class SocioTest {
-
-	@Mock
-	Socio s;
 
 	@Before
 	public void setUp() {	
-		MockitoAnnotations.initMocks(this.getClass());
+		
 	}
 
 	@Test
-	void socioTest() {
-		Mockito.when(s.getNombreApellido()).thenReturn("Inigo Navarro");
-		Mockito.when(s.getPts()).thenReturn(500);
-		Mockito.when(s.getDireccion()).thenReturn("123445");
-		Mockito.when(s.getTelefono()).thenReturn(123454321);
-		
-		assertEquals("Inigo Navarro", s.getNombreApellido());
-		assertEquals(500, s.getPts());
-		assertEquals("123445", s.getDireccion());
-		assertEquals(123454321, s.getTelefono());
+	void socioGetTest() {
+		Socio s = new Socio("S", "SS", 35, "ABAV", 12345);
+		assertEquals("SS", s.getNombreApellido());
+		assertEquals(35, s.getPts());
+		assertEquals("ABAV", s.getDireccion());
+		assertEquals(12345, s.getTelefono());
+	}
+	
+	@Test
+	void socioSetTest() {
+		Socio s = new Socio("S", "SS", 35, "ABAV", 12345);
+		s.setNombreApellido("S2");
+		s.setDireccion("ADC");
+		s.setPts(40);
+		s.setTelefono(148);
+		assertEquals("S2", s.getNombreApellido());
+		assertEquals(40, s.getPts());
+		assertEquals("ADC", s.getDireccion());
+		assertEquals(148, s.getTelefono());
 	}
 }

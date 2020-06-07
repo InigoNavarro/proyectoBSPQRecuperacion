@@ -63,7 +63,7 @@ public class GestorSocio extends GestorBD {
 									+ pts
 									+ ", telefono ="
 									+ telefono
-									+"', direccion ="
+									+", direccion ='"
 									+ direccion
 									+ "'"
 									+ " WHERE nombreApellido = '"

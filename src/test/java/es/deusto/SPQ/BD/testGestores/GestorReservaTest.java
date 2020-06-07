@@ -25,6 +25,6 @@ class GestorReservaTest {
 	void testGuardarReserva() {
 		Reserva r = new Reserva("R", "J", "S", "JJ", "SS");
 		GestorReserva.storeReserva(r);
-		assertEquals("JJ", GestorReserva.selectReserva("SS", "JJ").getJuegoNombre());
+		assertEquals("JJ", GestorReserva.selectReservas("SS").get(0).getJuegoNombre());
 	}
 }

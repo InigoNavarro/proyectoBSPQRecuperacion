@@ -21,16 +21,38 @@ public class GestorReserva extends GestorBD {
 		return GestorBD.getInstance().selectListaObjectos(Reserva.class);
 	}
 
-	public static Reserva selectReserva(String socioNombreApellido, String juegoNombre) {
+	public static Reserva selectReserva(String socioNombreApellido) {
 		pm = GestorBD.getPMF().getPersistenceManager();
 		Transaction transaction = null;
 		transaction = pm.currentTransaction();
 		try {
 			transaction.begin();
 			Query<Reserva> q = pm.newQuery(Reserva.class);
-			q.setFilter("socioNombreApellido == :socioNombreApellido && juegoNombre == :juegoNombre");
-			q.setParameters(socioNombreApellido, juegoNombre);
+			q.setFilter("socioNombreApellido == :socioNombreApellido");
+			q.setParameters(socioNombreApellido);
 			Reserva res1 = q.executeUnique();
+//			pm.flush();
+			transaction.commit();
+			return res1;
+
+		} finally {
+			if (transaction.isActive()) {
+				transaction.rollback();
+			}
+			pm.close();
+		}
+	}
+	
+	public static List<Reserva> selectReservas(String socioNombreApellido) {
+		pm = GestorBD.getPMF().getPersistenceManager();
+		Transaction transaction = null;
+		transaction = pm.currentTransaction();
+		try {
+			transaction.begin();
+			Query<Reserva> q = pm.newQuery(Reserva.class);
+			q.setFilter("socioNombreApellido == :socioNombreApellido");
+			q.setParameters(socioNombreApellido);
+			List<Reserva> res1 = q.executeList();
 //			pm.flush();
 			transaction.commit();
 			return res1;

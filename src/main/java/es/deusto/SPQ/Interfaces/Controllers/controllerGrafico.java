@@ -2,6 +2,7 @@ package es.deusto.SPQ.Interfaces.Controllers;
 
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -21,7 +22,11 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
 /**
@@ -31,6 +36,7 @@ import javafx.stage.Stage;
  */
 public class controllerGrafico implements Initializable{
 	static List<Juego> juegos;
+	ArrayList<String> nombreJuegosNoDisp = new ArrayList<String>();
 	HashMap<String, Integer> juegosTop = new HashMap<String, Integer>();
 
 	@FXML
@@ -53,9 +59,13 @@ public class controllerGrafico implements Initializable{
 	@FXML
 	void cargarGrafico(ActionEvent event) {
 		graficoJuegos.getData().clear();
-
-		for(int i = 0; i < 10; i ++) {
+		int cont = 0;
+		for(int i = 0; i < juegos.size(); i ++) {
 			juegosTop.put(juegos.get(i).getNombreJuego(), juegos.get(i).getNumVendidos());
+			cont +=1;
+			if(cont == 10) {
+				break;
+			}
 		}
 		final CategoryAxis xAxis = new CategoryAxis();
 		final NumberAxis yAxis = new NumberAxis();
@@ -77,6 +87,29 @@ public class controllerGrafico implements Initializable{
 	@FXML
 	void recargarJuegos(ActionEvent event) {
 		//Update en la BD + un alert
+		String mensaje = "";
+		for (Juego juego : juegos) {
+			if(juego.isCopiasDisp()) {
+				
+			}else {
+				nombreJuegosNoDisp.add(juego.getNombreJuego());
+				GestorJuego.recargarJuego(true, juego.getNombreJuego());
+			}
+		}
+		for(String nombre: nombreJuegosNoDisp) {
+			mensaje = mensaje + nombre + ", ";
+		}
+		if(!(mensaje.equals(""))) {
+			Alert alert = new Alert(AlertType.INFORMATION, "Los juegos " + mensaje + " se han actualizado."
+					, ButtonType.OK);
+			alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+			alert.show();
+		}else {
+			Alert alert = new Alert(AlertType.INFORMATION, "No queda ningun juego por recargar."
+					, ButtonType.OK);
+			alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+			alert.show();
+		}
 
 	}
 

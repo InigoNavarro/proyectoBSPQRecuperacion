@@ -26,7 +26,7 @@ public class GestorJuego extends GestorBD {
     }
     
     public static Juego selectJuego(String nombreJuego) {
-        PersistenceManager pm = GestorBD.getPMF().getPersistenceManager();
+        pm = GestorBD.getPMF().getPersistenceManager();
         Transaction transaction = null;
         transaction = pm.currentTransaction();
         try {
@@ -50,7 +50,7 @@ public class GestorJuego extends GestorBD {
     
     public static void updateJuego(String nombreNuevo, float precioNuevo, String companiaNueva,int numVentasNuevo,
 			boolean dispNuevo, String nombre) {
-		PersistenceManager pm = GestorBD.getPMF().getPersistenceManager();
+		pm = GestorBD.getPMF().getPersistenceManager();
 		Transaction transaction = null;
 		transaction = pm.currentTransaction();
 		try {
@@ -69,7 +69,7 @@ public class GestorJuego extends GestorBD {
 									+ numVentasNuevo
 									+ ", copiasDisp ="
 									+ dispNuevo
-									+ " WHERE nombreJuego = '"
+									+ " WHERE nombreJuego == '"
 									+ nombre
 									+ "'");
 			upQuery.execute();
@@ -89,7 +89,7 @@ public class GestorJuego extends GestorBD {
 	 * @param nombre el nombre por el que se encontrara
 	 */
 	public static void borrarJuego(String nombre) {
-		PersistenceManager pm = GestorBD.getPMF().getPersistenceManager();
+		pm = GestorBD.getPMF().getPersistenceManager();
 		Transaction transaction = null;
 		transaction = pm.currentTransaction();
 		try {
@@ -115,7 +115,7 @@ public class GestorJuego extends GestorBD {
 	
 	@SuppressWarnings("unchecked")
   public static List<Juego> listaJuegosOrdenada() {
-		PersistenceManager pm = GestorBD.getPMF().getPersistenceManager();
+		pm = GestorBD.getPMF().getPersistenceManager();
 		Transaction transaction = null;
 		transaction = pm.currentTransaction();
 		List<Juego> re;
@@ -123,7 +123,7 @@ public class GestorJuego extends GestorBD {
 			transaction.begin();
 			Query<?> upQuery =
 					pm.newQuery(
-							"SELECT  FROM "
+							"SELECT FROM "
 									+ Juego.class.getName()									
 									+ " ORDER BY numVendidos ASC");
 			re = (List<Juego>) upQuery.execute();
@@ -139,4 +139,31 @@ public class GestorJuego extends GestorBD {
 			pm.close();
 		}
 	}
+	
+	 public static void recargarJuego(boolean dispNuevo, String nombre) {
+			pm = GestorBD.getPMF().getPersistenceManager();
+			Transaction transaction = null;
+			transaction = pm.currentTransaction();
+			try {
+				transaction.begin();
+				Query<?> upQuery =
+						pm.newQuery(
+								"UPDATE "
+										+ Juego.class.getName()
+										+ " SET copiasDisp = "
+										+  dispNuevo
+										+ " WHERE nombreJuego == '"
+										+ nombre
+										+ "'");
+				upQuery.execute();
+//				pm.flush();
+				transaction.commit();
+			} catch (Exception ex) {
+			} finally {
+				if (transaction.isActive()) {
+					transaction.rollback();
+				}
+				pm.close();
+			}
+		}
 }

@@ -73,8 +73,8 @@ public class controllerSocio {
 			alert.show();
 		}else {
 			fieldNombre.setText(s1.getNombreApellido());
-			fieldPuntos.setText(s1.getPts() + " pts");
-			fieldTelefono.setText(s1.getTelefono() + " tlf");
+			fieldPuntos.setText(s1.getPts() + "");
+			fieldTelefono.setText(s1.getTelefono() + "");
 			fieldDireccion.setText(s1.getDireccion());
 			fieldNombre.setEditable(false);
 			fieldPuntos.setEditable(false);
@@ -89,10 +89,6 @@ public class controllerSocio {
 	 */
 	@FXML
 	void editarSocio(ActionEvent event) {
-		fieldNombre.setText("");
-		fieldDireccion.setText("");
-		fieldPuntos.setText("");
-		fieldTelefono.setText("");
 		fieldNombre.setEditable(true);
 		fieldDireccion.setEditable(true);
 		fieldPuntos.setEditable(true);
@@ -105,7 +101,6 @@ public class controllerSocio {
 	 */
 	@FXML
 	void guardarSocio(ActionEvent event) {
-		//Update BD
 		Socio s1 = GestorSocio.selectSocio(buscadorSocio.getText());
 		if(s1 == null) {
 			Alert alert = new Alert(AlertType.INFORMATION, "El socio " + buscadorSocio.getText() + " no existe en nuestra Base de Datos o el field esta vacio."
@@ -117,7 +112,7 @@ public class controllerSocio {
 		String direccionSinEspacios = fieldDireccion.getText().replaceAll(" ", "");
 		String ptsSinEspacios = fieldPuntos.getText().replaceAll(" ", "");
 		String telefonoSinEspacios = fieldTelefono.getText().replaceAll(" ", "");
-		if(nombreSinEspacios.equals("") && direccionSinEspacios.equals("") && ptsSinEspacios.equals("") && telefonoSinEspacios.equals("")){
+		if(nombreSinEspacios.equals("") || direccionSinEspacios.equals("") || ptsSinEspacios.equals("") || telefonoSinEspacios.equals("")){
 			Alert alert = new Alert(AlertType.INFORMATION, "Los fields tienen que tener contenido"
 					, ButtonType.OK);
 			alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
@@ -125,7 +120,7 @@ public class controllerSocio {
 		}else {
 			int telefono = Integer.parseInt(fieldTelefono.getText());
 			int pts = Integer.parseInt(fieldPuntos.getText());
-			//GestorSocio	.updateSocio(fieldNombre.getText(), precio, fieldCompania.getText(), ventas, b1, j1.getNombreJuego());
+			GestorSocio.updateSocio(fieldNombre.getText(), pts, fieldDireccion.getText(), telefono, buscadorSocio.getText());
 		}
 	}
 
@@ -138,7 +133,7 @@ public class controllerSocio {
 	void retirarSocio(ActionEvent event) {
 		//Drop BD
 		String nombreSinEspacios = buscadorSocio.getText().replaceAll(" ", "");
-		if(nombreSinEspacios.equals(" ")) {
+		if(nombreSinEspacios.equals("")) {
 			Alert alert = new Alert(AlertType.INFORMATION, "El buscador esta vacio", ButtonType.OK);
 			alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
 			alert.show();

@@ -83,12 +83,12 @@ public class controllerJuego {
 			fieldNombre.setText(j1.getNombreJuego());
 			fieldCompania.setText(j1.getEmpresa());
 			if(j1.isCopiasDisp()) {
-				fieldCopiasDisp.setText("Hay disponibles");
+				fieldCopiasDisp.setText("Si");
 			}else {
-				fieldCopiasDisp.setText("No hay disponibles");
+				fieldCopiasDisp.setText("No");
 			}
-			fieldPrecio.setText(j1.getPrecio() +" euros");
-			fieldVentas.setText(j1.getNumVendidos() + " vendidos");
+			fieldPrecio.setText(j1.getPrecio() +"");
+			fieldVentas.setText(j1.getNumVendidos() + "");
 			fieldNombre.setEditable(false);
 			fieldCompania.setEditable(false);
 			fieldCopiasDisp.setEditable(false);
@@ -98,17 +98,11 @@ public class controllerJuego {
 	}
 
 	/**
-	 * Boton para editar un juego que ya se haya buscado
+	 * Boton para editar un juego
 	 *  @param event el click del raton
 	 */
 	@FXML
 	void editarJuego(ActionEvent event) {
-		//Alert de primero buscar
-		fieldNombre.setText("");
-		fieldCompania.setText("");
-		fieldCopiasDisp.setText("");
-		fieldPrecio.setText("");
-		fieldVentas.setText("");
 		fieldNombre.setEditable(true);
 		fieldCompania.setEditable(true);
 		fieldCopiasDisp.setEditable(true);
@@ -122,7 +116,6 @@ public class controllerJuego {
 	 */
 	@FXML
 	void guardarJuego(ActionEvent event) {
-		//Update BD
 		Juego j1 = GestorJuego.selectJuego(buscadorJuego.getText());
 		if(j1 == null) {
 			Alert alert = new Alert(AlertType.INFORMATION, "El juego " + buscadorJuego.getText() + " no existe en nuestra Base de Datos o el field esta vacio."
@@ -135,18 +128,30 @@ public class controllerJuego {
 			String precioSinEspacios = fieldPrecio.getText().replaceAll(" ", "");
 			String ventasSinEspacios = fieldVentas.getText().replaceAll(" ", "");
 			String copiasDispSinEspacios = fieldCopiasDisp.getText().replaceAll(" ", "");
-			if(nombreSinEspacios.equals("") && companiaSinEspacios.equals("") && precioSinEspacios.equals("") && ventasSinEspacios.equals("") 
-					&& copiasDispSinEspacios.equals("")) {
+			if(nombreSinEspacios.equals("") || companiaSinEspacios.equals("") || precioSinEspacios.equals("") || ventasSinEspacios.equals("") 
+					|| copiasDispSinEspacios.equals("")) {
 				Alert alert = new Alert(AlertType.INFORMATION, "Los fields tienen que tener contenido"
 						, ButtonType.OK);
 				alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
 				alert.show();
 			}else {
-				int precio = Integer.parseInt(fieldPrecio.getText());
-				int ventas = Integer.parseInt(fieldVentas.getText());
-				boolean b1;
-				b1 = Boolean.parseBoolean(fieldCopiasDisp.getText());
-				GestorJuego.updateJuego(fieldNombre.getText(), precio, fieldCompania.getText(), ventas, b1, j1.getNombreJuego());
+				if(fieldCopiasDisp.getText().toLowerCase().equals("si") || fieldCopiasDisp.getText().toLowerCase().equals("no")) {
+					float precio =  Float.parseFloat(fieldPrecio.getText());
+					int ventas = Integer.parseInt(fieldVentas.getText());
+					boolean b1;
+					if(fieldCopiasDisp.getText().equals("Si")) {
+						b1 = true;
+					}else {
+						b1 = false;
+					}
+					GestorJuego.updateJuego(fieldNombre.getText(), precio, fieldCompania.getText(), ventas, b1, j1.getNombreJuego());
+				}else {
+					Alert alert = new Alert(AlertType.INFORMATION, "En el field copias disp tiene que poner si o no"
+							, ButtonType.OK);
+					alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+					alert.show();
+				}
+
 			}
 		}
 	}
@@ -157,7 +162,6 @@ public class controllerJuego {
 	 */
 	@FXML
 	void retirarJuego(ActionEvent event) {
-		//Drop BD
 		String nombreSinEspacios = buscadorJuego.getText().replaceAll(" ", "");
 		if(nombreSinEspacios.equals("")) {
 			Alert alert = new Alert(AlertType.INFORMATION, "El buscador esta vacio", ButtonType.OK);

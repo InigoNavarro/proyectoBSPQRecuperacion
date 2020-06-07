@@ -32,9 +32,6 @@ public class controllerReserva {
 	public static ObservableList<Reserva> reservas = FXCollections.observableArrayList();
 
 	@FXML
-	private TextField textoReserva;
-
-	@FXML
 	private Button botonReserva;
 
 	@FXML
@@ -66,17 +63,16 @@ public class controllerReserva {
 	@FXML
 	void buscarReserva(ActionEvent event) {
 		//Configurar la BD
-		String reservaSinEspacios = textoReserva.getText().replaceAll(" ", "");
 		String nomApellidoSinEspacios = textNomApellidoSocio.getText().replaceAll(" ", "");
-		Reserva r1 = GestorReserva.selectReserva(textNomApellidoSocio.getText(), textoReserva.getText());
-		if(reservaSinEspacios.equals("") && nomApellidoSinEspacios.equals("")) {
-			Alert alert = new Alert(AlertType.INFORMATION, "Uno de los fields ha quedado sin rellenar"
+		Reserva r1 = GestorReserva.selectReserva(textNomApellidoSocio.getText());
+		if(nomApellidoSinEspacios.equals("")) {
+			Alert alert = new Alert(AlertType.INFORMATION, "Hay que introducir un nombre de Socio"
 					, ButtonType.OK);
 			alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
 			alert.show();
 		}else {
 		if(r1 == null) {
-			Alert alert = new Alert(AlertType.INFORMATION, "La reserva compuesta por " + textoReserva.getText() + " y " + textNomApellidoSocio.getText() + " no existe en nuestra Base de Datos."
+			Alert alert = new Alert(AlertType.INFORMATION, "El cliente " + textNomApellidoSocio.getText() + " no ha realizado ninguna reserva."
 					, ButtonType.OK);
 			alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
 			alert.show();
