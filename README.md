@@ -13,15 +13,15 @@ Hay 6 ventanas:
 
   -Principal, que contedra 5 botones desde lo que se podran abrir el resto de ventanas.
   
-  -Catalogo, ver los juegos disponibles en el almacen de la tienda.
+  -Catalogo, buscar los juegos disponibles en el almacen de la tienda.
   
   -Juego, poder editar la información de un juego, recargar por falta de stock o retirarlo.
   
   -Reservas, poder ver las reservas realizadas por un cliente.
   
-  -Socio, podra verse la información de todos los clientes y seleccionando a uno se podra editar su info, ademas de crear nuevos o elimiar antiguos.
+  -Socio, podra verse la información de todos los clientes y seleccionando a uno se podra editar su info y elimiar antiguos.
   
-  -Un grafico de los 10 juegos que más se han vendido, desde aqui se podran recargar aquellos con falta de stock.
+  -Un grafico de 10 juegos para ver cuales se venden y cuales no, desde aqui se podran recargar aquellos con falta de stock.
   
   
 Para crear las ventanas se hara uso de javaFX.
