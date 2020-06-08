@@ -2,6 +2,10 @@
 # Tema del proyecto
 El proyecto sera un applicación que tiene como idea principal la gestión de una tienda de videojuegos en las que se buscar un juego en el catalogo, ver la info de un juego y si eso actualizarlo o retirarlo, un grafico de las ventas de 10 juegos donde se podra recargar aquellos que no esten disponibles, ver la información de un socio y si eso actualizarlo y editarlo y ver los juegos que ha reservado un cliente.
 
+## Requisitos
+- Java JDK > 11
+- Maven
+
 # Comandos para instalación
   - mvn install
 
