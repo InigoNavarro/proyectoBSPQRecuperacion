@@ -30,7 +30,6 @@ public class Socio extends DataObject<Socio> {
 	 * @param pts	numero de puntos guardados
 	 * @param direccion la direccion de un socio
 	 * @param telefono el telefono de un socio
-	 * @param edad la edad de un socio
 	 */
 	public Socio(String socioId, String nombreApellido, int pts, String direccion, int telefono) {
 		super();

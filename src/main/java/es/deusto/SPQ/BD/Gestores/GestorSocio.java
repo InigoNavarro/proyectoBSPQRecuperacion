@@ -8,22 +8,39 @@ import javax.jdo.Transaction;
 
 import es.deusto.SPQ.BD.Objetos.Socio;
 
+/**
+ * Gestor de la clase socio
+ * @author Ditto
+ *
+ */
 public class GestorSocio extends GestorBD {
 
 	private static PersistenceManagerFactory pmf = null;
 	private static PersistenceManager pm = null;
 
-
+/**
+ * Guardar un socio
+ * @param s Socio que se quiee guardar
+ */
 	public static void storeSocio(Socio s) {
 		GestorBD.getInstance();
 		GestorBD.getInstance().storeObjectInDB(s);
 	}
 
+	/**
+	 * Obtener una lista de todos los socios
+	 * @return la lista de los socios
+	 */
 	public static List<Socio> getTodosSocios() {
 		GestorBD.getInstance();
 		return GestorBD.getInstance().selectListaObjectos(Socio.class);
 	}
 
+	/**
+	 * Obtener un solo socio
+	 * @param nombreApellido el nombre  apellido del socio que se quiere buscar
+	 * @return el socio buscado
+	 */
 	public static Socio selectSocio(String nombreApellido) {
 		pm = GestorBD.getPMF().getPersistenceManager();
 		Transaction transaction = null;
@@ -46,6 +63,14 @@ public class GestorSocio extends GestorBD {
 		}
 	}
 
+	/**
+	 * Actualizar la info de un socio
+	 * @param nombreNuevo el nuevo nombre del socio
+	 * @param pts los nuevos pts del socio
+	 * @param direccion la nueva ireccion del socio
+	 * @param telefono el nuevo telefono del socio
+	 * @param nombreApellido el nuevo nombre del socio
+	 */
 	public static void updateSocio(String nombreNuevo, int pts, String direccion,int telefono,
 		String nombreApellido) {
 		pm = GestorBD.getPMF().getPersistenceManager();
@@ -81,7 +106,7 @@ public class GestorSocio extends GestorBD {
 	}
 
 	/**
-	 * Eliminar un juego de la bd
+	 * Eliminar un socio de la bd
 	 * @param nombre el nombre por el que se encontrara
 	 */
 	public static void borrarSocio(String nombre) {

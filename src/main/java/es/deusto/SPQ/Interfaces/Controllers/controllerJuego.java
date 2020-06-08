@@ -169,6 +169,12 @@ public class controllerJuego {
 			alert.show();
 		}else {
 			GestorJuego.borrarJuego(buscadorJuego.getText());
+			buscadorJuego.setText("");
+			fieldNombre.setText("");
+			fieldCompania.setText("");
+			fieldCopiasDisp.setText("");
+			fieldPrecio.setText("");
+			fieldVentas.setText("");
 		}
 	}
 

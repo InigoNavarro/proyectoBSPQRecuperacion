@@ -22,8 +22,8 @@ public class App extends Application {
 
 	public App() {
 		app = this;
-//		CrearDatosBD cdBD = new CrearDatosBD();
-//		cdBD.cargarBase();
+		CrearDatosBD cdBD = new CrearDatosBD();
+		cdBD.cargarBase();
 	}
 
 	@Override

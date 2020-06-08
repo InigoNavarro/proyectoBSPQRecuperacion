@@ -139,6 +139,11 @@ public class controllerSocio {
 			alert.show();
 		}else {
 		GestorSocio.borrarSocio(buscadorSocio.getText());
+		fieldNombre.setText("");
+		fieldDireccion.setText("");
+		fieldPuntos.setText("");
+		fieldTelefono.setText("");
+		buscadorSocio.setText("");
 		}
 	}
 

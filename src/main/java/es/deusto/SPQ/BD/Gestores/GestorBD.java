@@ -9,6 +9,11 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
+/**
+ * El gestor de la BD
+ * @author Ditto
+ *
+ */
 public class GestorBD {
 	private static GestorBD instance = null;
 	private static PersistenceManagerFactory pmf = null;
